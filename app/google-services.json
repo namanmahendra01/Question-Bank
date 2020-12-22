@@ -1,0 +1,57 @@
+{
+  "project_info": {
+    "project_number": "80565568097",
+    "firebase_url": "https://questionbankr.firebaseio.com",
+    "project_id": "questionbankr",
+    "storage_bucket": "questionbankr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80565568097:android:98cd5dfaaf5cb0a9",
+        "android_client_info": {
+          "package_name": "com.naman.questionbank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80565568097-36ln5dgntgujk1qvsjnado5uqs0uucs6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.naman.questionbank",
+            "certificate_hash": "09103cb47889a01e63efd1ed77608e273b76ca81"
+          }
+        },
+        {
+          "client_id": "80565568097-7uega1434pojoeshhucmcqrnkfpmp87s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.naman.questionbank",
+            "certificate_hash": "edcfe00052675a9d255b90d5ace29ef7d79d6f57"
+          }
+        },
+        {
+          "client_id": "80565568097-sml0joe20vbqrlpommgvgj9c2m04f2cs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATHEOSuJ27c1AG5Gta1WIIa0RMbNDtO50"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "80565568097-sml0joe20vbqrlpommgvgj9c2m04f2cs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-1938100089458005~9139424665"
+    }
+  ],
+  "configuration_version": "1"
+}

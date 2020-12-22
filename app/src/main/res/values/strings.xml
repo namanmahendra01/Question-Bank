@@ -1,0 +1,1657 @@
+<resources>
+
+    <string name="app_name">Question Bank</string>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+
+
+    <string-array name="semester">
+        <item>Select Semester</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+        <item>Six</item>
+        <item>Seven</item>
+        <item>Eight</item>
+    </string-array>
+    <string-array name="Three2019">
+        <item>-Select subject-</item>
+        <item>BUILDING-MATERIAL-CONSTRUCTION-RCE-301</item>
+        <item>COMPUTER-ORGANIZATION-AND-ARCHITECTURE-RCS-302</item>
+        <item> DATA-STRUCTURES-RCS-305</item>
+        <item>DIGITAL-LOGIC-DESIGN-REC-301 </item>
+        <item> DISCRETE-STRUCTURES-AND-THEORY-OF-LOGIC-RCS-301</item>
+        <item> ELECTRONICS-DEVICES-AND-CIRCUITS-REC-302</item>
+        <item>ENVIRONMENT-AND-ECOLOGY-RAS-302</item>
+        <item>FLUID-MECHANICS-RCE-303 </item>
+        <item> LASER-SYSTEMS-AND-APPLICATIONS-ROE-033</item>
+        <item>MATERIAL-SCIENCE-RME-301 </item>
+        <item> MATHEMATICS-III-RAS-301</item>
+        <item>NETWORK-ANALYSIS-AND-SYNTHESIS-REE-305</item>
+        <item> SIGNALS-AND-SYSTEMS-REC-303</item>
+        <item>SURVEYING-RCE-302 </item>
+        <item> THERMODYNAMICS-RME-302</item>
+        <item>UNIVERSAL-HUMAN-VALUES-AND-PROFESSIONAL-ETHICS-RVE-301 </item>
+
+    </string-array>
+    <string-array name="Three2018">
+        <item>-Select subject-</item>
+        <item>BUILDING-MATERIAL-CONSTRUCTION-RCE-301</item>
+        <item> COMPUTER-ORGANIZATION-ARCHITECTURE-RCS-302</item>
+        <item>DATA-STRUCTURES-RCS-305 </item>
+        <item> DIGITAL-LOGIC-DESIGN-REC-301</item>
+        <item> Discrete-Structures-Theory-of-Logic-RCS-301</item>
+        <item>Environment-Ecology-RAS-302</item>
+        <item>ELECTONIC-DEVICES-AND-CIRCUITS-REC-302 </item>
+        <item> FLUID-MECHANICS-RCE-303</item>
+        <item> LASER-SYSTEMS-AND-APPLICATIONS-ROE-033</item>
+        <item> MANUFACTURING-SCIENCE-RME-301</item>
+        <item>Mathematics-III-RAS-301</item>
+        <item>MECHANICS-OF-SOLIDS-RME-303 </item>
+        <item>NETWORK-ANALYSIS-AND-SYNTHESIS-REE-305 </item>
+        <item>SIGNAL-AND-SYSTEM-REC-303 </item>
+        <item>SURVEYING-RCE-302 </item>
+        <item>THERMODYNAMICS-RME-302</item>
+        <item> UNIVERSAL-HUMAN-VALUES-PROFESSIONAL-ETHICS-RVE-301</item>
+    </string-array>
+    <string-array name="Three2017">
+        <item>-Select subject-</item>
+        <item>BASIC-SYSTEM-ANALYSIS-NEE-303EE-302EEE-301 </item>
+        <item>BUILDING-MATERIAL-AND-CONSTRUCTION-NCE-302 </item>
+        <item>COMPUTER-BASED-NUMERICAL-AND-STATISTICAL-TECHNIQUES-NCS-303 </item>
+        <item>CYBER-SECURITY-AUC-002</item>
+        <item> DATA-STRUCTURES-USING-C-NCS-301</item>
+        <item> DIGITAL-LOGIC-DESIGN-NEC-309</item>
+        <item>DISCRETE-STRUCTURES-AND-GRAPH-THEORY-NCS-302 </item>
+        <item>FLUID-MECHANICS-NCE-301 </item>
+        <item>FUNDAMENTAL-OF-ELECTRONIC-DEVICES-NEC-302</item>
+        <item> INDUSTRIAL-PSHYCHOLOGY-NHU-301</item>
+        <item>INDUSTRIAL-SOCIOLOGY-NHU-302 </item>
+        <item>INTRODUCATION-TO-SOFT-COMPUTING-NEURAL-NETWORKS-FUZZY-LOGIC-AND-GENETIC-ALG </item>
+        <item>MATERIAL-SCIENCE-NME-301 </item>
+        <item>MATHEMATICS-III-NAS-301</item>
+        <item> MECHANICS-OF-SOLIDS-NME-302</item>
+        <item>SIGNAL-SYSTEM-NEC-303 </item>
+        <item>SURVEYING-I-NCE-303 </item>
+        <item> SWITCHING-THEORY-AND-LOGIC-DESIGN-NEC-304</item>
+        <item>THERMAL-HYDRAULIC-MACHINE-NME-309</item>
+        <item> THERMODYNAMICS-NME-303</item>
+    </string-array>
+    <string-array name="Three2016">
+        <item>-Select subject-</item>
+        <item>BASIC-SYSTEM-ANALYSIS-BASIC-OF-SIGNALS-SYSTEMS-NEE-303-EEE-301EE-302 </item>
+        <item>BIOCHEMISTRY-NBT-303 </item>
+        <item>CYBER-SECURITY-AUC-002 </item>
+        <item>DIGITAL-ELECTRONICS-EEC-302</item>
+        <item> DISCRETE-STRUCTURES-AND-GRAPH-THEORY-NCS-302</item>
+        <item> ELECTROMAGNETIC-FIELD-THEORY-EEC-303</item>
+        <item> ELECTRO-MECHANICAL-ENERGY-CONVERSION-INEE-301</item>
+        <item> ELEMENTARY-MATHEMATICS-III-NBT-301</item>
+
+        <item>ENGINEERING-MATHEMATICS-III-NAS-301</item>
+        <item> ENTREPRENEURSHIP-DEVELOPMENT-MBTM-031NMBA-031</item>
+        <item>FLUID-MECHANICS-ME-302 </item>
+        <item>FUNDAMENTAL-OF-ELECTRONIC-DEVICES-NEC-302 </item>
+        <item> FUNDAMENTALS-OF-NETWORK-ANALYSIS-AND-SYNTHESIS-EEC-304</item>
+        <item>INDUSTRIAL-SOCIOLOGY-NHU-302</item>
+        <item> INTRODUCTION-TO-SOFT-COMPUTING-NEURAL-NETWORKSFUZZY-LOGIC-AND-GENETIC-ALGOR</item>
+        <item>MATHEMATICS-III-AS-303 </item>
+        <item>MATHEMATICS-III-EAS-301 </item>
+        <item>MECHANICS-OF-SOLIDS-NME-302 </item>
+        <item>NETWORK-ANALYSIS-AND-SYNTHESIS-EE-301</item>
+        <item>SENSOR-AND-INSTRUMENTATION-EE-305 </item>
+        <item>SIGNALS-SYSTEMS-NEC-303 </item>
+        <item>SIGNAL-SYSTEMS-EC-303 </item>
+        <item> SWITCHING-THEORY-LOGIC-DESIGN-NEC-304</item>
+        <item>SURVEYING-I-NCE-303</item>
+        <item>TECHNICAL-WRITING-AS-306 </item>
+        <item>THERMAL-HYDRAULIC-MACHINES-EME-309 </item>
+        <item>THERMODYNAMICS-ME-301 </item>
+        <item> THERMODYNAMICS-NME-303</item>
+    </string-array>
+    <string-array name="Three2015">
+        <item>-Select subject-</item>
+        <item> Analog and Digital Electronics (EEC-309) </item>
+        <item>Analolog Digital Electronics (EE-303)</item>
+        <item>Basic System Analysis (NEE-303) </item>
+        <item>Biochemistry (BT-304) </item>
+        <item>Biochemistry (NBT-303)</item>
+        <item>BUILDING-MATERIAL-CONSTRUCTION-NCE-302 </item>
+        <item> Computer Based Numerical   Statistical Techniques (NCS-303)</item>
+        <item>Data Structure (CS-301) </item>
+        <item>Data Structure Using C (ECS-302) </item>
+        <item>Data Structure Using C (NCS-301)</item>
+        <item>Digital Design (EC-302) (MTU) </item>
+        <item>Digital logic Design (NEC-309) </item>
+        <item>Discrete Mathematical Structures (ECS-303) </item>
+        <item> Discrete Structure and Graph Theory (NCS-302)</item>
+        <item>Discrete Structures (CS-302)</item>
+        <item> Electrical and Electronics Measurement (EE-304)</item>
+        <item> Electrical Measurements   Measuring Instruments (EEE-302)</item>
+        <item>Electrical Measurements   Measuring Instruments (NEE-302) </item>
+        <item>Electro Magnetic Field Theory (EEC-303) </item>
+
+        <item>Electro-Mechanical Energy Conversion - I (NEE-301)</item>
+        <item>Elemantary Mathematics-III (NBT-301) </item>
+        <item>ENGINEERING MATHEMATICS (AS 301A) </item>
+        <item> Engineering Mathimatics-III (AS-303)</item>
+        <item>Fluid Flow   Solid Handling (NBT-302) </item>
+        <item>Fluid Mechanics (CE-301)</item>
+        <item> Fluid Mechanics (ECE-301)</item>
+        <item>Fluid Mechanics (ME-302) </item>
+        <item>Fluid Mechanics (NCE-301) </item>
+        <item> FUNDAMENTAL OF ELECTRONIC DEVICES ( NEC 302)</item>
+        <item>Fundamentals of Electronics Devices (EEC-301)</item>
+        <item> Genetics   Molecular Biology (NBT-305)</item>
+        <item>HUMAN VALUES AND ETHICS (AU 301) </item>
+        <item>Human Values and Professional Ethics (AUC-001) </item>
+        <item>Industrial Phychology (NHU-301-EHU-301) </item>
+        <item>Industrial Sociology (NHU-302-EHU-302)</item>
+        <item>Instrumentation and Techniques (BT-302) </item>
+        <item>It Infrastructure and its Management (ECS-304) </item>
+        <item> Laser System and Applications (NOE-033)</item>
+        <item>Material Science (NME-301) </item>
+        <item>Material Science in Engineering (EME-301)</item>
+        <item> Material Science in Engineering (ME-303)</item>
+        <item> Mathematics-(NAS-301)</item>
+        <item> Mathematics-III (EAS-301)</item>
+        <item> Mechanics of Solids (CE-302)</item>
+        <item>Mechanics of Solids (NME-302)</item>
+        <item> Microbiology and Cell Biology (NBT-304)</item>
+        <item> Nano Science (NOE-032)</item>
+        <item>Network Analysis and Synthesis (EE-301) </item>
+        <item> Network Analysis and Synthesis (NEC-301)</item>
+        <item>Sensor   Instrumentation (EE-305)</item>
+        <item> SIGNALS   SYSTEMS (EC 303)</item>
+        <item>Signals and Syatems (NEC-303) </item>
+        <item>Statistical Techniques (BT-301) </item>
+        <item>Strength of Materials   Machine -I (ME-304) </item>
+        <item>Strength of Materials (EME-302)</item>
+        <item>Surveying (CE-303) </item>
+        <item> Switching Theory and Logic Design (NEC-304)</item>
+        <item> Technical Writing (AS-306)</item>
+        <item> Thermal and Hydraulic Machines (EME-309)</item>
+
+        <item>Thermal and Hydraulic Machines (NME-309)</item>
+        <item>Thermodynamics (EME-303) </item>
+        <item>Thermodynamics (ME-301) </item>
+        <item>Thermodynamics (NME-303) </item>
+
+    </string-array>
+    <string-array name="Three2014">
+        <item>-Select subject-</item>
+        <item> ANALOG AND DIGITAL ELECTRONICS (EE303) </item>
+        <item> BASIC SYSTEM ANALYSIS (EEE-301)</item>
+        <item> BASICS OF SIGNAL AND SYSTEMS (EE302)</item>
+        <item> BIOCHEMISTRY-(BT-304)</item>
+        <item>BUILDING-MATERIALS-AND-CONSTRUCTIONS-ECE-302</item>
+        <item> DATA STRUCTURES (CS-301)</item>
+        <item> DIGITAL DESIGN (EC-302)MTU</item>
+        <item> DIGITAL LOGIC DESIGN (ECS-301)</item>
+        <item>DISCRETE STRUCTURES (CS-302) </item>
+        <item>ELECTRICAL AND ELECTRONICS MEASUREMENTS   INSTRUMENTS-(EE-304)</item>
+        <item> ELECTRICAL MEASUREMENTS AND MEASURING INSTRUMENTS-(EEE-302)</item>
+        <item>ELECTROMAGNETIC FIELD THEORY (EEC-303) </item>
+        <item>ELECTRONIC DEVICES (EC-301) </item>
+        <item>FLUID MECHANICS (CE-301) </item>
+        <item>FLUID MECHANICS (ECE-301)</item>
+        <item> FLUID MECHANICS (ME-302)</item>
+        <item>FUNDAMENTALS OF ELECTRONICS DEVICES (EEC-301) </item>
+        <item>FUNDAMENTALS OF NETWORK ANALYSIS AND SYNTHESIS (EEC-304) </item>
+        <item> HUMAN BEHAVIOUR (INCLUDING HUMAN SOCIOLOGY AND PSYCHOLOGY) ( HU-301)</item>
+
+        <item>HUMAN VALUES AND PROFESSIONAL ETHICS (AU-301)MTU</item>
+        <item>INDUSTRIAL-SOCIOLOGY-EHU-302 </item>
+        <item> INSTRUMENTATION AND TECHNIQUES (BT-302)</item>
+        <item>LASER-SYSTEMS-AND-APPLICATIONS-EOE-033 </item>
+        <item>MATERIAL SCIENCE IN ENGINEERING (ME-303) </item>
+        <item>MATHEMATICS-III (AS-301)</item>
+        <item>MATHEMATICS-III (AS-303) </item>
+        <item>MATHEMATICS-III (EAS-301) </item>
+        <item>MECHANICS OF SOLIDS (CE-302) </item>
+        <item> MICROBIOLOGY AND CELLBIOLOGY (BT-305)</item>
+        <item>MOLECULAR DYNAMICS AND BIOENERGETICS (BT-306)</item>
+        <item>NETWORK ANALYSIS AND SYNTHESIS (EE301) </item>
+        <item> SENSOR AND INSTRUMENTATION (EE-305)</item>
+        <item>SIGNALS AND SYSTEMS (EC-303) </item>
+        <item> STATISTICAL TECHNIQUES(MATHEMATICS-III)-(BT-301)</item>
+        <item> STRENGTH OF MATERIALS (EME-302)</item>
+        <item> STRENGTH OF MATERIALS AND MACHINE DRAWING-I (ME-304)</item>
+        <item>SURVEYING (CE-303) </item>
+        <item> SURVEYING-CE-303</item>
+        <item>SWITCHING THEORY (TEC-302)  </item>
+        <item>TECHNICAL WRITING (AS-306)</item>
+        <item> THERMODYNAMICS (ME-301)</item>
+
+    </string-array>
+    <string-array name="Four2019">
+
+    </string-array>
+    <string-array name="Four2018">
+        <item>-Select subject-</item>
+        <item>APPLIED-THERMODYNAMICS-RME403 </item>
+        <item> DATA-STRUCTURE-ALGORITHMS-RCS406</item>
+        <item>DATA-STRUCTURE-RCS405 </item>
+        <item>ELECTRICAL-MACHINES-CONTROLS.-REE409</item>
+        <item> ELECTROMAGNETIC-FIELD-THEORY-REC402</item>
+        <item>ELECTRONIC-MEASUREMENT-.-INSTRUMENTATION-REC403 </item>
+        <item>ENVIRONMENT-ECOLOGY-RAS402 </item>
+        <item>GEOINFORMATICS-RCE402 </item>
+        <item>HYDRAULICS-HYDRAULIC-MACHINES-RCE401</item>
+        <item>INFORMATION-THEORY-AND-CODING.-REC406 </item>
+        <item>INTRODUCTION-TO-MICROPROCESSOR-REC405 </item>
+        <item> MANUFACTURING-SCIENCE-TECHNOLOGY-I-RME402</item>
+        <item> MEASUREMENT-AND-METROLOGY-RME401</item>
+        <item>MICROPROCESSOR-.-MICROCONTROLLER-REC401MICROPROCESSOR-.-MICROCONTROLLER-REC401</item>
+        <item> OPERATING-SYSTEM-RCS401</item>
+        <item>SOFTWARE-ENGNEERING-RCS402 </item>
+        <item>STRUCTURE-ANALYSIS-–-I-RCE403 </item>
+        <item> THEORY-OF-AUTOMATA-FORMAL-LANGUAGES-RCS403</item>
+
+        <item>UNIVERSAL-HUMAN-VALUES-.-PROFESSIONAL-ETHICS-RVE401</item>
+
+    </string-array>
+    <string-array name="Four2017">
+        <item>-Select subject-</item>
+        <item>ANALOG-AND-DIGITAL-ELECTRONICS-NEC409A </item>
+        <item>APPLIED-THERMODYNAMICS-EME401 </item>
+        <item> APPLIED-THERMODYNAMICS-ME403</item>
+        <item>APPLIED-THERMODYNAMICS-NME401 </item>
+        <item>BASICS-OF-SYSTEM-MODELING-AND-SIMULATION-AS402</item>
+        <item>BUILDING-MATERIAL-AND-CONSTRUCTION-CE404 </item>
+        <item>CHEMICAL-ENGINEERING-THERMODYNAMICS-I-CH402 </item>
+        <item> CHEMICAL-TECHNOLOGY-I-CH403</item>
+        <item>COMPUTER-ARCHITECTURE-ORGANIZATION-EC403MTU </item>
+        <item>COMPUTER-ARCHITECTURE-ORGANIZATION-EEC402</item>
+        <item>COMPUTER-GRAPHICS-NCS403 </item>
+        <item> COMPUTER-ORGANIZATION-ECS401</item>
+        <item>CYBER-SECURITY-SEM-IV-2016-17-AUC002 </item>
+        <item>DATABASE-MANAGEMENT-SYSTEM-CS402 </item>
+        <item>DATABASE-MANAGEMENT-SYSTEM-ECS402</item>
+        <item>DATA-STRUCTURE-NEC401 </item>
+        <item> ELECTRICAL-AND-ELECTRONICS-ENGINEERING-MATERIAL-EEE403</item>
+        <item> ELECTRICAL-INSTRUMENTATION-AND-PROCESS-CONTROL-NEE403</item>
+        <item>ELECTRICAL-MACHINES-AND-CONTROL-EEE409 </item>
+        <item>ELECTRICAL-MACHINES-AND-CONTROL-NEE409</item>
+        <item>ELECTROMAGNETIC-FIELD-THEORY-EC402MTU </item>
+        <item> ELECTROMAGNETIC-FIELD-THEORY-NEC404</item>
+        <item> ELECTROMECHANICAL-ENERGY-CONCERSION-II-NEE401</item>
+        <item> ELECTRO-MECHANICAL-ENERGY-CONVERSION-I-EE401</item>
+        <item>ELECTRO-MECHANICAL-ENERGY-CONVERSION-I-EEE401</item>
+        <item>ELECTRONIC-CIRCUITS-EC401MTU </item>
+        <item> ELECTRONIC-CIRCUITS-EEC401</item>
+        <item> ELECTRONIC-CIRCUITS-NEC402</item>
+        <item>ELECTRONIC-MEASURMENTS-INSTRUMENTATION-EEC403 </item>
+        <item>ELECTRONIC-MEASURMENTS-INSTRUMENTATION-NEC403</item>
+        <item> ELEMENTS-OF-POWER-SYSTEM-EE403</item>
+        <item>ENGINEERING-GEOLOGY-ECE404 </item>
+        <item> ENGINEERING-GEOLOGY-NCE404</item>
+        <item>ENGINEERING-MATHEMATICS-III-EAS401 </item>
+        <item>ENGINEERING-MATHEMATICS-III-NAS401</item>
+        <item>ENVIRONMENT-AND-ECOLOGY-EAS205 </item>
+        <item>FLUID-MACHINERY-ME401 </item>
+        <item> GEOINFORMATICS-CE402</item>
+        <item> GEOINFORMATICS-ECE402</item>
+        <item>GEOINFORMATICS-NCE402 </item>
+        <item> HEAT-TRANSFER-CH401</item>
+        <item> HUMAN-VALUES-AND-PROFESSIONAL-ETHICS-AU401</item>
+        <item> HUMAN-VALUES-AND-PROFESSIONAL-ETHICS-AUC001</item>
+        <item>HUMAN-VALUES-AND-PROFESSIONAL-ETHICS-EHU111</item>
+        <item>HYDRAULICS-AND-HYDRAULIC-MACHINES-CE403 </item>
+        <item>HYDRAULICS-AND-HYDRAULIC-MACHINES-ECE403 </item>
+        <item>HYDRAULICS-AND-HYDRAULIC-MACHINES-NCE403 </item>
+        <item> INDUSTRIAL-PSYCHOLOGY-EHU401</item>
+        <item>INDUSTRIAL-PSYCHOLOGY-NHU401</item>
+        <item> INDUSTRIAL-SOCIOLOGY-EHU402</item>
+        <item>INDUSTRIAL-SOCIOLOGY-NHU402 </item>
+        <item> INFORMATION-THEORY-AND-CODING-NEC408</item>
+        <item>INTRODUCTION-TO-MICROPROCESSOR-NEC409 </item>
+        <item>INTRODUCTION-TO-SOFT-COMPUTING-NEURAL-NETWORK-FUZZY-LOGIC-GENETIC-ALGORITHM </item>
+        <item> INTRODUTION-TO-MICROPROCESSOR-EEC406</item>
+        <item>LASER-SYSTEMS-AND-APPLICATIONS-EOE043 </item>
+        <item>MANUFACTURING-SCIENCE-I-EME402 </item>
+        <item>MANUFACTURING-SCIENCE-I-ME402</item>
+        <item> MANUFACTURING-SCIENCE-TECHNOLOGY-I-NME402</item>
+        <item> MANUFACURING-TECHNOLOGY-EME405</item>
+        <item>MATERIAL-SCEINCE-CH404 </item>
+        <item> MATERIAL-SCIENCE-EOE047</item>
+        <item>MATHEMATICS-II-RAS203</item>
+        <item>MEASUREMENT-AND-METROLOGY-EME403 </item>
+        <item> MEASUREMENT-AND-METROLOGY-NME403</item>
+        <item> MICROPROCESSOR-EE402</item>
+        <item> MICROPROCESSOR-EEE404</item>
+        <item> MULTIMEDIA-AND-ANIMATION-NIT401</item>
+        <item> NANO-SCIENCES-EOE042</item>
+        <item> NETWORK-ANALYSIS-AND-SYNTHESIS-EC404MTU</item>
+        <item>NETWORK-ANALYSIS-AND-SYNTHESIS-EEE402 </item>
+        <item>NETWORK-ANALYSIS-AND-SYNTHESIS-NEE402</item>
+        <item> NUCLEAR-SCIENCE-EOE046</item>
+        <item>OBJECT-ORIENTED-PROGRAMMING-WITH-C-CS403 </item>
+        <item> OPERATING-SYSTEM-NCS401</item>
+        <item>PHYSICAL-CHEMISTRY-OF-DYEING-EC404 </item>
+        <item>POLYMER-SCIENCE-TECHNOLOGY-EOE045</item>
+        <item> Principle-of-Fabric-Manufacture-EC401</item>
+        <item> SENSOR-INSTRUMENTATION-EE405</item>
+        <item>SENSOR-INSTRUMENTATION-NEE405 </item>
+        <item>SIGNALS-AND-SYSTEMS-EEC404 </item>
+        <item> SOFTWARE-ENGINEERING-EIT402</item>
+        <item>SPACE-SCIENCE-EOE044</item>
+        <item> STATISTICAL-TECHNIQUES-EAS402</item>
+        <item>STRUCTURAL-ANALYSIS-I-ECE401 </item>
+        <item>TECHNICAL-WRITING-AS401 </item>
+        <item>TECHNICAL-WRITING-AS406 </item>
+        <item> TECHNOLOGY-OF-BLEACHING-AND-MERCERIZATION-EC402</item>
+        <item>TECHNOLOGY-OF-DYEING-EC403 </item>
+        <item>THEORY-OF-AUTOMATA-AND-FORMAL-LANGUAGES-ECS403</item>
+        <item> THEORY-OF-AUTOMATA-AND-FORMAL-LANGUAGES-NCS402</item>
+        <item> THEORY-OF-COMPUTATION-CS404</item>
+    </string-array>
+    <string-array name="Four2016">
+        <item>-Select subject-</item>
+        <item>ANALOG-DIGITAL-ELECTRONICS-NEC-409  </item>
+        <item>APPLIED-THERMODYNAMICS-ME-403 </item>
+        <item>APPLIED-THERMODYNAMICS-NME-401EME-401 </item>
+        <item> BASICS-OF-SYSTEM-MODELLING-AND-SIMULATION-AS-402</item>
+        <item>BIOINFORMATICS-I-EBT-404</item>
+        <item>BIOTECHNOLOGY__NOE-044 </item>
+        <item>COMPUTER-ARCHITECTURE-AND-ORGANISATION-EEC-402EC-403 </item>
+        <item>COMPUTER-GRAPHICS-NCS-403 </item>
+        <item> CYBER-SECURITY-AUC-002</item>
+        <item>DATA-STRUCTURE-NEC-401</item>
+        <item>ELECTRICAL-CIRCUITS-MACHINES-EAG-401 </item>
+        <item> ELECTRIC-MACHINE-AUTOMATIC-CONTROL-EEE-409NEE-409</item>
+        <item> ELECTROMAGNETIC-FIELD-THEORY-EMFT-EC-402</item>
+        <item>ELECTROMAGNETIC-FIELD-THEORY-EMFT-NEC-404 </item>
+        <item>ELECTROMECHANICAL-ENERGY-CONVERSION-I-EEE-401</item>
+        <item>ELECTRO-MECHANICAL-ENERGY-CONVERSION-II-NEE-401 </item>
+        <item>ELECTRONIC-MEASUREMENTS-INSTRUMENTATION-NEC-403 </item>
+        <item> ELECTRONICS-CIRCUIT-EEC-401EC-401MTU</item>
+        <item>ENGG-MATHEMATICS-III-NAS-401EAS-401 </item>
+
+        <item>ENGINEERING-GEOLOGY-NCE-404</item>
+        <item>ENZYME-ENGINEERING-NBT-403EBT-401BT-404 </item>
+        <item> FLUID-MACHINERY-ME-401</item>
+        <item> GEOINFOMATICS-NCE-402</item>
+        <item> HEAT-MASS-TRANSFER-NBT-402</item>
+        <item>HUMAN-BEHAVIOUR-INCLUDING-HUMAN-SOCIOLOGYAND-PSYCHOLOGY-HU-401</item>
+        <item>HUMAN-VALUES-PROFESSIONAL-ETHICS-EHU-111AU-401AUC-001 </item>
+        <item>HYDRAULICS-HYDRAULIC-MACHINES-NCE-403 </item>
+        <item>IMMUNOLOGY-NBT-404BT-405EBT-402 </item>
+        <item> INDUSTRIAL-PSYCHOLOGY-NHU-401EHU-401</item>
+        <item>INDUSTRIAL-SOCIOLOGY-NHU-402EHU-402</item>
+        <item>INSTRUMENTATION-PROCESS-CONTROL-NEE-403 </item>
+        <item> INTRODUCTION-TO-MICROPROCESSOR-EEC-406</item>
+        <item>INTRODUCTION-TO-MICROPROCESSOR-NEC-409 </item>
+        <item>INTRODUCTION-TO-SOFT-COMPUTING-NEURAL-NETWORK-FUZZY-LOGIC-GENETIC-ALGORITHM </item>
+        <item>LASER-SYSTEM-APPLICATIONS-EOE-043NOE-043</item>
+        <item>MANUFACTURING-SCIENCE-TECHNOLOGY-I-ME-402 </item>
+        <item>MANUFACTURING-SCIENCE-TECHNOLOGY-I-NME-402 </item>
+        <item>MEASUREMENT-AND-METROLOGY-NME-403EME-403 </item>
+        <item> MICROPROCESSOR-EE-402EEE-404</item>
+        <item>MOLECULARDYNAMICS-BIOENERGETICS-NBT-405</item>
+        <item> MULTIMEDIA-AND-ANIMATION-NIT-401</item>
+        <item>NANO-SCIENCES-EOE-042NOE-042 </item>
+        <item> NETWORK-ANALYSIS-AND-SYNTHESIS-NEE-402EEE-402</item>
+        <item>OPERATING-SYSTEM-NCS-401 </item>
+        <item>SENSOR-AND-INSTRUMENTATION-EE405</item>
+        <item>STRUCTURAL-ANALYSIS-I-NCE-401 </item>
+        <item> TECHNICAL-WRITING-AS-401_AS-406</item>
+        <item> THEORY-OF-AUTOMATA-AND-FORMAL-LAUNGUAGE-NCS-402ECS-403</item>
+
+    </string-array>
+    <string-array name="Four2015">
+        <item>-Select subject-</item>
+        <item>ANALOG AND DIGITAL ELECTRONICS (NEC 409 (A) </item>
+        <item>APPLIED THERMODYNAMICS (EME-401)</item>
+        <item> APPLIED THERMODYNAMICS (NME 401)</item>
+        <item> BASICS OF SYSTEM MODELLING AND SIMULATION (AS 402)</item>
+        <item>COMPUTER GRAPHICS (NCS 403) </item>
+        <item>COMPUTER ORGANIZATION (CS 401) </item>
+        <item>COMPUTER ORGANIZATION (ECS 401)</item>
+        <item>COMPUTER PROGRAMMING (CS-201) </item>
+        <item> DATA STRUCTURE (NEC 401)</item>
+        <item>DATABASE MANAGEMENT SYSTEMS (ECS-402) </item>
+        <item>ELECTRIC MACHINE   AUTOMATIC CONTROL (NEE 409) </item>
+
+        <item>ELECTRICAL   ELECTRONICS ENGINEERING MATERIALS (EEE 403)</item>
+        <item>ELECTROMAGENETIC FIELD THEORY (EMFT) (NEC 404) </item>
+        <item>ELECTROMAGNETIC FIELD THEORY (EC402) </item>
+        <item> ELECTRO-MECHANICAL ENERGY CONVERSION -I (EEE 401)</item>
+        <item>ELECTRO-MECHANICAL ENERGY CONVERSION-II (NEE-401) </item>
+        <item>ELECTRONIC CIRCUITS (NEC 402)</item>
+        <item> ELECTRONIC FIELD THEORY (EC 402)(MTU)</item>
+        <item>ELECTRONIC INSTRUMENTATION AND MEASUREMENTS( EEC-403) </item>
+        <item>ELECTRONIC MEASUREMENTS AND INSTRUMENTATION (NEC 403) </item>
+        <item>ELECTRONICS CIRCUITS (EC 401)(MTU) </item>
+        <item>ENGINEERING GEOLOGY (NCE-404)</item>
+        <item> GEOINFORMATICS (CE-402)</item>
+        <item> HUMAN BEHAVIOUR (HU-401)</item>
+        <item> HYDRAULICS   HYDRAULIC MACHINES (NCE-403)</item>
+        <item> INDRODUCTION TO SOFT COMPUTING (NEURAL NETWORKS FUZZY LOGIC   GENETIC ALGOR</item>
+        <item>INDUSTRIAL PSYCHOLOGY (NHU401 EHU401)</item>
+        <item> INDUSTRIAL SOCIOLOGY (NHU402 EHU402)</item>
+        <item> INFORMATION THEORY AND CODING (NEC 408)</item>
+        <item>INSTRUMENTATION   PROCESS CONTROL (NEE-403) </item>
+        <item>LASER SYSTEMS   APPLICATIONS (NOE 043) </item>
+        <item>MANUFACTURING SCIENCE  TECHNOLOGY -I (NME-402)</item>
+        <item> MATHEMATICS -III (EAS 401)</item>
+        <item> MEASUREMENT AND METEROLOGY (NME-403)</item>
+        <item> MICROPROCESSORS (EEE 404)</item>
+        <item>MULTIMEDIA AND ANIMATION (NIT 401) </item>
+        <item>NETWORK ANALYSIS AND SYNTHESIS (EC 404) (MTU)</item>
+        <item>NETWORK ANALYSIS AND SYNTHESIS (NEE-402) </item>
+        <item>OPERATING SYSTEM (NCS 401) </item>
+        <item>PRINCIPLES OF FABRIC MANUFACTURE (EC 401) </item>
+        <item>SIGNALS AND SYSTEMS (EEC-404) </item>
+        <item>STRUCTURAL ANALYSIS -I (NCE-401)</item>
+        <item> TECHNICAL WRITING (AS-406 AS-401)</item>
+        <item>THEORY OF AUTOMATA AND FORMAL LANGUAGE (NCS 402) </item>
+        <item>THEORY OF COMPUTATION (CS 404) </item>
+
+    </string-array>
+    <string-array name="Four2014">
+        <item>-Select subject-</item>
+        <item> APPLIED THERMODYNAMICS AND MACHINE DRAWING-II -(ME-403)</item>
+        <item>APPLIED THERMODYNAMICS-(EME-401)</item>
+        <item>BASICS OF SYSTEM MODELLING AND SIMULATION-(AS-402) </item>
+        <item>BUILDING MATERIAL CONSTRUCTION-(CE-404) </item>
+        <item> COMPUTER ARCHITECTURE AND ORGANIZATION-(EC-402)MTU</item>
+        <item>COMPUTER ARCHITECTURE AND ORGANIZATION-(EEC-402) </item>
+
+        <item>COMPUTER ORGANIZATION-(CS-401)</item>
+        <item>DATABASE MANAGEMENT SYSTEMS-(CS-402) </item>
+        <item>ELCTRONICS CIRCUITS-(EC-401)MTU </item>
+        <item> ELECTRICAL MACHINES   AUTOMATIC CONTROL-(EEE-409)</item>
+        <item>ELECTROMAGNETIC FIELD THEORY-(EC-402)MTU </item>
+        <item>ELECTRO-MECHANICAL ENERGY CONVERSION-I -(EE-401)</item>
+        <item>ELECTRO-MECHANICAL ENERGY CONVERSION-I -(EEE-401) </item>
+        <item> ELECTRONIC CIRCUITS-(EEC-401)</item>
+        <item>ELEMENTS OF POWER SYSTEM-(EE-403) </item>
+        <item>ENZYME ENGINEERING-(BT-404) </item>
+        <item>FLUID MACHINERY-(ME-401)</item>
+        <item> GENETICS   MOLECULAR BIOLOGY-(BT-406)</item>
+        <item>GEOINFORMATICS-(CE-402) </item>
+        <item> HUMAN BEHAVIOUR-(HU-401)</item>
+        <item>HUMAN VALUES AND PROFESSIONAL ETHICS-(AU-401) </item>
+        <item>HYDRAULICS AND HYDRAULIC MACHINES-(CE-403)</item>
+        <item>IMMUNOLOGY-(BT-405) </item>
+        <item> INDUSTRIAL SOCIOLOGY-(EHU-402)</item>
+        <item>INTRODUCTION TO BIOINFORMATICS-(BT-403) </item>
+        <item>INTRODUCTION TO MICROPROCESSOR-(EEC-406) </item>
+        <item>INTRODUCTION TO SOFT COMPUTING(NEURAL NETWORKS FUZZY LOGIC   GENETIC ALGORI</item>
+        <item>MANUFACTURING SCIENCE-I -(EME-402) </item>
+        <item> MANUFACTURING SCIENCE-I -(ME-402)</item>
+        <item> MATHEMATICS-III -(EAS-401)</item>
+        <item>MEASUREMENT AND METROLOGY-(EME-403) </item>
+        <item>MICROPROCESSORS-(EE-402)</item>
+        <item> MICROPROCESSORS-(EEE-404)</item>
+        <item>NETWORK ANALYSIS   SYNTHESIS-(EC-404)MTU </item>
+        <item> NETWORK ANALYSIS   SYNTHESIS-(EEE-402)</item>
+        <item> SENSOR AND INSTRUMENTATION-(EE-405)</item>
+        <item>SIGNALS AND SYSTEMS-(EEC-404)</item>
+        <item>STRUCTURAL ANALYSIS-I-(CE-401) </item>
+        <item> TECHNICAL WRITING-(AS-406 AS-401)</item>
+        <item>THEORY OF AUTOMATA   FORMAL LANGUAGES-(ECS-403) </item>
+        <item>THEORY OF COMPUTATION-(CS-404) </item>
+
+    </string-array>
+    <string-array name="One2019">
+        <item>-Select subject-</item>
+        <item>BASIC-ELECTRICAL-ENGINEERING-KEE-101</item>
+        <item>CHEMISTRY-KAS-102 </item>
+        <item>MATHEMATICS-I-KAS-103 </item>
+        <item> PHYSICS-KAS-101</item>
+        <item>PROGRAMMING-FOR-PROBLEM-SOLVING-KCS-101</item>
+    </string-array>
+    <string-array name="One2018">
+        <item>-Select subject-</item>
+        <item> BASIC-ELECTRICAL-ENGINEERING-REE-101 </item>
+        <item>COMPUTER-SYSTEM-PROGRAMMING-IN-C-RCS-101 </item>
+        <item>ENGG.-CHEMISTRY-RAS-102 </item>
+        <item> ENGINEERING-MATHE-MATICS-RAS-103</item>
+        <item>ENGINEERING-PHYSICS-I-RAS-101</item>
+        <item> PROFESSIONAL-COMMUNICATION-RAS-104</item>
+
+    </string-array>
+    <string-array name="One2017">
+        <item>-Select subject-</item>
+        <item>BASIC-ELECTRICAL-ENGINEERING-REE-101 </item>
+        <item>COMPUTER-SYSTEM-PROGRAMMING-IN-C-RCS-101 </item>
+        <item> ENGINEERING-CHEMISTRY-RAS-102</item>
+        <item>ENGINEERING-MATHEMATICS-1-RAS-103</item>
+        <item> ENGINEERING-PHYSICS-1-RAS-101</item>
+        <item>PROFESSIONAL-COMMUNICATION-RAS-104 </item>
+
+    </string-array>
+    <string-array name="One2016">
+        <item>-Select subject-</item>
+        <item> BASIC-ELECTRICAL-ENGINEERING-NEE-101</item>
+        <item> COMPUTER-CONCEPTS-PROGRAMMING-IN-C-ECS-101</item>
+        <item>COMPUTER-SYSTEM-PROGRAMMING-IN-C-NCS-101</item>
+        <item> ELECTRICAL-ENGINEERING-EE-101-EEE-101</item>
+        <item> ENGINEERING-CHEMISTRY-I-EAS-102</item>
+        <item> ENGINEERING-CHEMISTRY-NAS-102</item>
+        <item> ENGINEERING-MATHEMATICS-I-AS-101</item>
+
+        <item>ENGINEERING-MATHEMATICS-I-BT-101</item>
+        <item> ENGINEERING-MATHEMATICS-I-NAS-301-1</item>
+        <item>ENGINEERING-PHYSICS-I-AS-102 </item>
+        <item> ENGINEERING-PHYSICS-I-EAS-101</item>
+        <item>MATHEMATICS-I-EAS-103 </item>
+        <item>PROFESSIONAL-COMMUNICATION-EAS-104-NAS-104</item>
+
+    </string-array>
+    <string-array name="One2015">
+        <item>-Select subject-</item>
+        <item> Computer System   Programming in C (NCS-101)</item>
+        <item>Electrical Engineering (EE-101) </item>
+        <item>Electrical Engineering (NEE-101-NEE201) </item>
+        <item>Elementary Mathematics-I(NBT-EBT-101) </item>
+        <item>Engineering Chemestry (NAS 102-NAS 202)</item>
+        <item>Engineering Mathematics-I (BT-101) </item>
+        <item>Engineering Physics-I (AS-102) </item>
+        <item>Engineering Physics-I (EAS-101) </item>
+        <item>Engineering Physics-I (NAS-101) </item>
+        <item>ENGINEERING-MATHEMATICS-1NAS-103</item>
+        <item> Mathematics-I (AS-101)</item>
+        <item> Mathematics-I (EAS-103)</item>
+        <item> Professional Communication (NAS-104-EAS-104-MCA-111)</item>
+
+    </string-array>
+    <string-array name="One2014">
+        <item>-Select subject-</item>
+        <item> BASIC ELECTRICAL   ELECTRONICS ENGINEERING (EBT-103)</item>
+        <item>ELECTRICAL ENGINEERING (EE-101)</item>
+        <item>ENGINEERING CHEMISTRY </item>
+        <item> ENGINEERING MATHEMATICS -I (BT-101)</item>
+        <item>ENGINEERING PHYSICS - I (EAS-101) </item>
+        <item> ENGINEERING PHYSICS - I (EAS-102)</item>
+        <item>MATHEMATICS - I (AS-101)</item>
+        <item> MATHEMATICS - I (EAS-103)</item>
+
+    </string-array>
+    <string-array name="Two2018">
+        <item>-Select subject-</item>
+        <item>BASIC-ELECTRICAL-ENGINEERING-REE201 </item>
+        <item> COMPUTER-SYSTEM-.-PROGRAMMING-IN-C-RCS201</item>
+        <item> ENGINEERING-CHEMISTRY-RAS202</item>
+        <item>ENGINEERING-MATHEMATICS-II-RAS203</item>
+        <item> ENGINEERING-PHYSICS-II-RAS201</item>
+        <item>PROFESSIONAL-COMMUNICATION-RAS204 </item>
+
+    </string-array>
+    <string-array name="Two2017">
+        <item>-Select subject-</item>
+        <item> BASIC-ELECTRICAL-ENGINEERINGEE201</item>
+        <item> BASIC-ELECTRICAL-ENGINEERING-NEE201</item>
+        <item>BASIC-ELECTRICAL-ENGINEERING-REE201</item>
+        <item> COMPUTER-SYSTEM-AND-PROGRAMMING-IN-C-NCS201</item>
+        <item> COMPUTER-SYSTEM-PROGRAMMING-IN-‘C’-RCS201</item>
+        <item> ENGINEERING-CHEMISTRY-AS203</item>
+        <item> ENGINEERING-CHEMISTRYEAS202</item>
+
+        <item>ENGINEERING-CHEMISTRYNAS202</item>
+        <item>ENGINEERING-CHEMISTRY-RAS202 </item>
+        <item> ENGINEERING-MATHEMATICS-II-AS201</item>
+        <item>ENGINEERING-MATHEMATICS-IIEAS203 </item>
+        <item>ENGINEERING-PHYSICS-II-AS202E </item>
+        <item>ENGINEERING-PHYSICS-II-AS202M</item>
+        <item> ENGINEERING-PHYSICS-IIEAS201</item>
+        <item> ENGINEERING-PHYSICS-IINAS201</item>
+        <item> ENGINEERING-PHYSICS-II-RAS201</item>
+        <item> PROFESSIONAL-COMMUNICATIONEAS204</item>
+        <item>PROFESSIONAL-COMMUNICATION-NAS204</item>
+        <item>PROFESSIONAL-COMMUNICATION-RAS204 </item>
+
+    </string-array>
+    <string-array name="Two2016">
+        <item>-Select subject-</item>
+        <item>BASIC-ELECTRICAL-ENGINEERING-NEE-201NEE-101EEE-201EE-201 </item>
+        <item> COMPUTER-SYSTEM-PROGRAMMING-IN-C-ECS-201NCS-201</item>
+        <item> ENGINEERING-CHEMISTRY-AS-203</item>
+        <item>ENGINEERING-CHEMISTRY-NAS-202EAS-202NAS-102</item>
+        <item>ENGINEERING-PHYSICS-II-NAS-201EAS-201 </item>
+        <item> PROFESSIONAL-COMMUNICATION-NAS-204EAS-204NAS-104</item>
+
+    </string-array>
+    <string-array name="Two2015">
+        <item>-Select subject-</item>
+        <item> Basic Electrical Engineering (NEE101-NEE201)</item>
+        <item>Computer System  Programming in C (NCS-201) </item>
+        <item>ELECTRICAL ENGINEERING (EE 201) </item>
+        <item>ELECTRICAL ENGINEERING (EEE 201-EEE101)</item>
+        <item> ENGINEERING PHYSICS II (C) (AS-202)C</item>
+        <item>Engineering Physics -II (NAS-201) </item>
+        <item> PROFESSIONAL COMMUNICATION (EAS 204-EAS 104)</item>
+        <item> PROFESSIONAL COMMUNICATION (NAS-204)</item>
+
+    </string-array>
+    <string-array name="Two2014">
+        <item>-Select subject-</item>
+        <item>COMPUTER CONCEPTS AND PROGRAMMING IN C -(ECS-201 101) </item>
+        <item>ELECTRICAL ENGINEERING-(EE-201 101) </item>
+        <item>ELECTRICAL ENGINEERING-(EEE-201 101)</item>
+        <item> ELECTRICAL ENGINEERING-(TEE-201 101)</item>
+        <item>ENGINEERING MATHEMATICS-II-(BT-201) </item>
+        <item> ENGINEERING MATHEMATICS-II-(EAS-203 NAS-203)</item>
+        <item> ENGINEERING PHYSICS-II (C) -(AS-202C)</item>
+        <item>ENGINEERING PHYSICS-II-(AS-202E)</item>
+        <item> ENGINEERING PHYSICS-II-(AS-202M)</item>
+        <item>ENGINEERING PHYSICS-II-(EAS-201) </item>
+        <item> MATHEMATICS-II-(AS-201)</item>
+
+    </string-array>
+    <string-array name="Two2019">
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+
+    </string-array>
+    <string-array name="Five2019">
+        <item>-Select subject-</item>
+        <item>ANTENNA-AND-WAVE-PROPAGATION-REC-051 </item>
+        <item>CONCRETE-TECHNOLOGY-RCE-052</item>
+        <item> CYBER-SECURITY-RUC-501</item>
+        <item> DATA-BASE-MANAGEMENT-SYSTEM-RCS-501</item>
+        <item>DESIGN-ANALYSIS-OF-ALGORITHMS-RCS-502 </item>
+        <item>DESIGN-ANALYSIS-OF-ALGORITHMS-RCS-502 </item>
+        <item>DESIGN-OF-STRUCTURE-I-RCE-502</item>
+        <item>DIGITAL-SIGNAL-PROCESSING-REC-503</item>
+        <item>GEOTECHNICAL-ENGINEERING-RCE-501 </item>
+        <item> HEAT-AND-MASS-TRANSFER-RME-502</item>
+        <item>I.C.-ENGINES-COMPRESSORS-RME-051 </item>
+        <item>INTEGRATED-CIRCUITS-REC-501 </item>
+        <item>MACHINE-DESIGN-I-RME-501</item>
+        <item>MANAGERIAL-ECONOMICS-RAS-501 </item>
+        <item> MANUFACTURING-SCIENCE-TECHNOLOGY-II-RME-503</item>
+        <item>PRINCIPLES-OF-COMMUNICATION-REC-502 </item>
+        <item>PRINCIPLES-OF-PROGRAMMING-LANGUAGES-RCS-503 </item>
+        <item>QUANTITY-ESTIMATION-AND-MANAGEMENT-RCE-503</item>
+        <item>WEB-TECHNOLOGIES-RCS-052 </item>
+
+    </string-array>
+    <string-array name="Five2018">
+        <item>-Select subject-</item>
+        <item> ANTENNA-AND-WAVE-PROPAGATION-NEC-504</item>
+        <item> COMPUTER-ARCHITECTURE-NCS-505</item>
+        <item>CONTROL-SYSTEM-I-NIC-501 </item>
+        <item>CONTROL-SYSTEM-NEE-503</item>
+        <item>DATABASE-MANAGEMENT-SYSTEM-NCS-502 </item>
+        <item>DESIGN-AND-ANALYSIS-OF-ALGORITHMS-NCS-501</item>
+        <item> DESIGN-OF-CONCRETE-STRUCTURES-I-NCE-505</item>
+        <item> ELEMENTS-OF-POWER-SYSTEM-NEE-501</item>
+        <item>ENGINEERING-ECONOMICS-NHU-501 </item>
+        <item>ENVIRONMENTAL-ENGINEERING-1-NCE-503-ECE-503 </item>
+        <item>FUNDAMENTALS-OF-ELECTROMAGNETIC-THEORY-NEC-508</item>
+        <item>GEOTECHNICAL-ENGINEERING-NCE-501-ECE-501</item>
+        <item> HEAT-MASS-TRANSFER-NME-504</item>
+        <item>I-C-ENGINES-COMPRESSORS-NME-505 </item>
+        <item>INTEGRATED-CIRCUITS-NEC-501 </item>
+        <item>KINEMATICS-OF-MACHINES-NME-502 </item>
+        <item>MACHINE-DESIGN-I-NME-501-EME501</item>
+        <item>MANAGEMENT-INFORMTION-SYSTEM-NIT-501 </item>
+        <item> MANUFACTURING-SCIENCE-AND-TECHNOLOGY-II-NME-503</item>
+        <item>MICROPROCESSOR-ITS-APPLICATIONS-NEE-504 </item>
+        <item> MICROPROCESSOR-NEC-503</item>
+        <item>POWER-ELECTRONICS-NEE-502</item>
+        <item>PRINCIPLES-OF-COMMUNICATION-NEC-502 </item>
+        <item>PRINCIPLES-OF-PROGRAMMING-LANGUAGES-NCS-503 </item>
+        <item> STRUCTURAL-ANALYSIS-II-NCE-504</item>
+        <item> TRANSPORTATION-ENGINEERING-I-NCE-502</item>
+        <item> WEB-TECHNOLOGY-NCS-504</item>
+
+    </string-array>
+    <string-array name="Five2017">
+        <item>-Select subject-</item>
+        <item> ANTENNA-AND-WAVE-PROPAGATION-NEC-504</item>
+        <item>COMPUTER-ARCHITECTURE-NCS-505 </item>
+        <item> CONTROL-SYSTEM-NEE-503</item>
+        <item> CONTROL-SYSTEMS-I-NIC-501</item>
+        <item> DATABASE-MANAGEMENT-SYSTEMDBMS-NCS-502</item>
+        <item>DESIGN-AND-ANALYSIS-OF-ALGORITHM-NCS-501 </item>
+        <item>DESIGN-OF-CONCRETE-STRUCTURE-I-NCE-505</item>
+        <item>ELEMENTS-OF-POWER-SYSTEM-NEE-501 </item>
+        <item> ENGINEERING-ECONOMICS-NHU-501</item>
+        <item>ENVIRONMENTAL-ENGINEERING-I-NCE-503 </item>
+        <item>GEOTECHNICAL-ENGINEERING-NCE-501 </item>
+        <item>HEAT-AND-MASS-TRANSFER-NME-504</item>
+        <item>I.C.-ENGINES-COMPRESSORS-NME-505</item>
+        <item> INTEGRATED-CIRCUITS-NEC-501</item>
+        <item>KINEMATICS-OF-MACHINES-NME-502 </item>
+        <item> MACHINE-DESIGN-I-NME-501</item>
+        <item>MANAGEMENT-INFORMATION-SYSTEMS-NIT-501 </item>
+        <item>MANUFACTURING-SCIENCE-TECHNOLOGY-II-NME-503</item>
+        <item> MICROPROCESSOR-ITS-APPLICATIONS-NEE-504</item>
+        <item>POWER-ELECTRONICS-NEE-502 </item>
+        <item> PRINCIPLES-OF-COMMUNICATION-NEC-502</item>
+        <item>PRINCIPLES-OF-PROGRAMMING-LANGUAGE-NCS-503 </item>
+        <item>STRUCTURAL-ANALYSIS-II-NCE-504</item>
+        <item> TRANSPORTATION-ENGINEERING-I-NCE-502</item>
+        <item>WEB-TECHNOLOGY-NCS-504 </item>
+
+    </string-array>
+    <string-array name="Five2016">
+        <item>-Select subject-</item>
+        <item>ANTENNA-WAVE-PROPAGATION-EEC-504 </item>
+        <item>ANTENNA-WAVE-PROPAGATION-NEC-504 </item>
+        <item>BIO-INFORMATICS-1-NBT-502</item>
+        <item>BIOPROCESS-ENGINEERING-I-EBT-503NBT-503 </item>
+        <item>COMPUTER-ARCHITECTURE-NCS-505</item>
+        <item> COMPUTER-GRAPHICS-ECS-504</item>
+        <item>CONTROL-SYSTEM-EEE-502-NEE-503 </item>
+        <item> CONTROL-SYSTEM-I-NIC-501</item>
+        <item>DATA-BASE-MANAGEMENT-SYSTEM-NCS-502 </item>
+        <item>DESIGN-AND-ANALYSIS-OF-ALGORITHMS-ECS-502</item>
+        <item>DESIGN-OF-CONCRETE-STRUCTURES-I-NCE-505ECE-505</item>
+        <item> ELECTROMECHANICAL-ENERGY-CONVERSION-II-EEE-501</item>
+        <item>ELEMENTS-OF-POWER-SYSTEM-NEE-501EEE-503 </item>
+        <item>ENGINEERING-AND-MANAGERIAL-ECONOMICS-EHU-501 </item>
+        <item> ENGINEERING-CHEMISTRY-I-AS-103</item>
+        <item>ENGINEERING-ECONOMICS-NHU-501</item>
+        <item>ENVIRONMENTAL-ENGINEERING-I-NCE-503 </item>
+        <item> FUNDAMETALS-OF-E.M.-THEORY-EEC-508</item>
+        <item> FUNDAMETALS-OF-E.M.-THEORY-NEC-508</item>
+        <item>GENETIC-ENGINEERING-NBT-501EBT-501 </item>
+        <item>HEAT-MASS-TRANSFER-EME-504</item>
+        <item>HEAT-MASS-TRANSFER-NME-504 </item>
+        <item> I.C.-ENGINES-COMPRESSORS-EME-505</item>
+        <item> I.C.-ENGINES-COMPRESSORS-NME-505</item>
+        <item> INTEGRATED-CIRCUITS-EEC-501</item>
+        <item> INTEGRATED-CIRCUITS-NEC-501</item>
+        <item>KINEMATICS-OF-MACHINES-NME-502</item>
+        <item> MACHINE-DESIGN-I-EME-501-NME-501</item>
+        <item>MACHINE-DESIGN-I-NME-501 </item>
+        <item> MANAGEMENT-INFORMATION-SYSTEM-NIT-501</item>
+        <item> MANUFACTURING-SCIENCE-TECHNOLOGY-II-NME-503</item>
+        <item>MICROPROCESSOR-ITS-APPLICATIONS-NEE-504</item>
+        <item>MICROPROCESSORS-EEC-503</item>
+        <item> MICROPROCESSORS-NEC-503-2</item>
+        <item>MODERN-ANALYTICAL-TECHNIQUES-NBT-505 </item>
+        <item> OBJECT-ORIENTED-TECHNIQUES-ECS-503</item>
+        <item> OPERATING-SYSTEM-ECS-501</item>
+        <item>PLANT-BIOTECHNOLOGY-NBT-504</item>
+        <item> POWER-ELECTRONICS-NEE-502</item>
+        <item>PRINCIPLE-OF-PROGRAMMING-LANGUAGE-NCS-503 </item>
+        <item> PRINCIPLES-OF-COMMUNICATION-EEC-502</item>
+        <item>PRINCIPLES-OF-COMMUNICATION-EEC-502-NEC-502 </item>
+        <item>STRUCTURAL-ANALYSIS-II-NCE-504ECE-504</item>
+        <item>THEORY-OF-MACHINES-1-EME-502 </item>
+        <item> WEB-TECHNOLOGY-NCS-504</item>
+
+    </string-array>
+    <string-array name="Five2015">
+        <item>-Select subject-</item>
+        <item>Analog Integrated Electronics (EEC-509) </item>
+        <item>ANTENNA AND WAVE PROPAGATION (EEC 504) </item>
+        <item>Bioinformatics-II (EBT-502)</item>
+        <item>Bioprocess Engineering-I (EBT-503)</item>
+        <item> Control System (EEE-502)</item>
+        <item>Control System-I (EIC-501)</item>
+        <item> Data Structure and Algorithms (ECS-508)</item>
+        <item> Design and Analysis of Algorithms (ECS-502)</item>
+        <item>Design of Concrete Structure-I (ECE-505) </item>
+        <item>Electrical Instrumentation and Process Control (EEN-701 .EEE-504) </item>
+        <item>Electro-Mechanical Energy Conversion-II (EEE-501))</item>
+        <item>Elements of Power System (EEE-503)</item>
+        <item>Engineering and Managerial Economics (EHU-501) </item>
+        <item>Genetic Engineering (EBT- 501) </item>
+        <item>Geotechnical Engineering (ECE-501) </item>
+        <item> Graph Theory (ECS-505)</item>
+        <item>Heat   Mass Transfer (EME-504)</item>
+        <item> IC Engines   Compressors (EME-505)</item>
+        <item>Information Security and Cyber Laws (EIT-505) </item>
+        <item> Integrated Circuit (EEC-501)</item>
+        <item> Machine Design-I (EME-501)</item>
+        <item>Manufacturing Science-II (EME-503)</item>
+        <item>Microprocessors (EEC-503) </item>
+        <item>Modern Analytical Techniques (EBT- 504) </item>
+        <item> Operating System (ECS-501)</item>
+        <item>Principle of Communication (EEC-502) </item>
+        <item>Structure Analysis - II (ECE-504)</item>
+        <item> Theory of Machines - I (EME-502)</item>
+        <item>Transportation Engineering-I (ECE-502)</item>
+
+    </string-array>
+    <string-array name="Five2014">
+        <item>-Select subject-</item>
+        <item> ANTENNA AND WAVE PROPAGATION (EEC-504)</item>
+        <item>BIO-INFORMATICS-II (EBT-502)</item>
+        <item>BIOPROCESS ENGINEERING-I (EBT-503) </item>
+        <item>COMPUTER GRAPHICS (ECS-504)</item>
+        <item>CONTROL SYSTEM (EEE-502) </item>
+        <item> CONTROL SYSTEM-1 (EIC-501)</item>
+        <item>DATA STRUCTURE AND ALGORITHM (ECS-508) </item>
+        <item> DESIGN AND ANALYSIS OF ALGORITHMS (ECS-502)</item>
+        <item>DESIGN-OF-CONCRETE-STRUCTURES-I-ECE-505</item>
+        <item>E-COMMERCE (EIT-501)</item>
+        <item> ELECTRICAL INSTRUMENTATION AND PROCESS CONTROL (EEE-504)</item>
+        <item> ELECTROMECHANICAL ENERGY CONVERSION-II (EEE-501)</item>
+        <item>ELEMENTS OF POWER SYSTEM (EEE-503) </item>
+        <item>ENGINEERING AND MANAGERIAL ECONOMICS (EHU-501) </item>
+        <item>ENVIRONMENTAL-ENGINEERING-I-ECE-503</item>
+        <item> FUNDAMENTALS OF E.M. THEORY (EEC-508)</item>
+        <item> GENETIC ENGINEERING (EBT-501)</item>
+        <item>GRAPH THEORY (ECS-505) </item>
+        <item> HEAT AND MASS TRANSFER (EME-504)</item>
+        <item>IC ENGINES AND COMPRESSORS (EME-505)</item>
+        <item>INFORMATION SECURITY AND CYBER LAWS (EIT-505) </item>
+        <item> INTEGRATED CIRCUITS (EEC-501)</item>
+        <item>MACHINE DESIGN-1 (EME-501) </item>
+        <item> MANUFACTURING SCIENCE-II (EME-503)</item>
+        <item>MICROPROCESSORS (EEC-503)</item>
+        <item>MODERN ANALYTICAL TECHNIQUES (EBT-504) </item>
+        <item>OBJECT ORIENTED TECHNIQUES (ECS-503) </item>
+        <item> OPERATING SYSTEM (ECS-501)</item>
+        <item>PRINCIPLES OF COMMUNICATIONS (EEC-502)</item>
+        <item> STRUCTURAL-ANALYSIS-II-ECE-504</item>
+        <item>THEORY OF MACHINES-I (EME-502) </item>
+        <item>TRANSPORTATION-ENGINEERING-I-ECE-502 </item>
+
+    </string-array>
+    <string-array name="Six2019">
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item> </item>
+        <item></item>
+    </string-array>
+    <string-array name="Six2018">
+        <item>-Select subject-</item>
+        <item>BIG-DATA-NIT067 </item>
+        <item>COMPILER-DESIGN-ECS603</item>
+        <item>COMPUTER-NETWORKS-NCS601 </item>
+        <item> CONSTRUCTION-TECHNOLOGY-MANAGEMENT-NCE-603</item>
+        <item>DESIGN-OF-CONCRETE-STRUCTURE-2-NCE601 </item>
+        <item> DATA-WAREHOUSING-DATA-MINING-NCS066</item>
+        <item>DIGITAL-COMMUNICATION-NEC602</item>
+        <item>DIGITAL-SIGNAL-PROCESSING-NEC011</item>
+        <item>DYNAMICS-OF-MACHINES-NME603 </item>
+        <item> ENVIRONMENTAL-ENGINEERING-2-NCE602ECE-602</item>
+        <item> FLUID-MACHINERY-NME021</item>
+        <item> INDUSTRIAL-MANAGEMENT-NHU601</item>
+        <item> INTEGRATED-CIRCUITS-NEN603</item>
+        <item> INTEGRATED-CIRCUIT-TECHNOLOGY-NEC603</item>
+        <item> MACHINE-DESIGN-II-NME602</item>
+        <item>MICROCONTROLLERS-FOR-EMBEDDED-SYSTEMS-NEC022R </item>
+        <item> MICROWAVE-ENGINEERING-NEC601</item>
+        <item>PARALLEL-ALGORITHMS-NCS063</item>
+        <item> POWER-SYSTEM-ANALYSIS-NEE601</item>
+        <item>PRINCIPLE-OF-TOWN-PLANNING-AND.-ARCHITECTURE-NCE-014 </item>
+        <item> REFRIGERATION-AIR-CONDITIONING-NME604</item>
+        <item>RURAL-WATER-SUPPLY-AND-SANITATION-NCE024 </item>
+        <item>SOFTWARE-ENGINEERING-NCS602ECS-602</item>
+        <item>SPECIAL-ELECTRICAL-MACHINE-NEN014 </item>
+        <item>SWITCHGEAR-PROTECTION-NEE602 </item>
+
+    </string-array>
+    <string-array name="Six2017">
+        <item>-Select subject-</item>
+        <item> ADVANCE-DBMS-NCS069</item>
+        <item>ADVANCED-CONCRETE-DESIGN-ECE021</item>
+        <item> ADVANCED-CONCRETE-DESIGN-NCE021</item>
+        <item> ADVANCED-FOUNDATION-DESIGN-ECE011</item>
+        <item> ADVANCED-FOUNDATION-DESIGN-NCE011</item>
+        <item>ADVANCE-DIGITAL-DESIGN-USING-VERILOG-NEC024R </item>
+        <item>ADVANCED-SEMICONDUCTOR-DEVCES-EEC013</item>
+        <item>ADVANCE-SEMICONDUCTOR-DEVICES-NEC014</item>
+        <item> ADVANCE-WELDING-TECHNOLOGY-EME022</item>
+        <item>ANALOG-AND-DIGITAL-COMMUNICATION-EEC609 </item>
+        <item> ANALOG-SIGNAL-PROCESSING-EEC011</item>
+        <item> ANALOG-SIGNAL-PROCESSING-NEC023</item>
+        <item>ANTENNA-AND-WAVE-PROPAGATION-NEN023</item>
+        <item> ANTENNA-WAVE-PROPAGATION-AWP-EEC029</item>
+        <item>APPROXIMATION-AND-RANDOMIZED-ALGORITHMS-NCS064 </item>
+        <item>ARTIFICIAL-NEURAL-NETWORK-NEC013 </item>
+        <item> AUTOMOTIVE-CHASSIS-AND-SUSPENSION-NAU601</item>
+        <item>AUTOMOTIVE-FUELS-AND-LUBRICANTS-NAU602</item>
+        <item>BIG-DATA-NIT067 </item>
+        <item> BIOINFORMATICS-NIT063</item>
+        <item> COATING-OF-TEXTILES-EC602</item>
+        <item>COMMUNICATION-ENGINEERING-EEC608 </item>
+        <item>COMMUNICATION-ENGINEERING-EEC609A</item>
+        <item>COMMUNICATION-ENGINEERING-NEC609 </item>
+        <item>COMPILER-DESIGN-ECS603</item>
+        <item> COMPILER-DESIGN-NCS603</item>
+        <item> COMPLEXITY-THEORY-NCS062</item>
+        <item> COMPUTATIONAL-GEOMETRY-NCS061</item>
+        <item> COMPUTER-NETWORK-ECS601</item>
+        <item>COMPUTER-ARCHITECTURE-ORGANIZATION-NEC012</item>
+        <item>COMPUTER-NETWORK-NCS601</item>
+        <item> CONCURRENT-SYSTEMS-NCS065</item>
+        <item> CONSTRUCTION-TECHNOLOGY-MANAGEMENT-NCE603</item>
+        <item> CONVENTIONAL-CAD-OF-ELECTRICAL-MACHINES-EEE023</item>
+        <item>CONVENTIONAL-CAD-OF-ELECTRICAL-MACHINES-NEE023 </item>
+        <item>CRYPTOGRAPHY-NETWORK-SECURITY-ECS029</item>
+        <item>CRYPTOGRAPHY-NETWORK-SECURITY-EEE024 </item>
+        <item>DATABASE-MANAGEMENT-SYSTEM-DATA-MINING-WAREHOUSING-ECS019 </item>
+        <item> DATA-STRUCTURE-EEC012</item>
+        <item>DATA-WAREHOUSING-DATA-MINING-NCS066 </item>
+        <item>DESIGN-OF-AUTOMOTIVE-COMPONENTS-NAU603</item>
+        <item>DESIGN-OF-CONCRETE-STRUCTURES-II-ECE601 </item>
+        <item> DESIGN-OF-CONCRETE-STRUCTURES-II-NCE601</item>
+        <item> DIGITAL-COMMUNICATION-EEC601</item>
+        <item> DIGITAL-CONTROL-SYSTEM-EEE011</item>
+        <item>DIGITAL-CONTROL-SYSTEM-NEE011</item>
+        <item>DIGITAL-CONTROL-SYSTEM-NEN011 </item>
+        <item>DIGITAL-SIGNAL-PROCESSING-EEC602</item>
+        <item> DIGITAL-SIGNAL-PROCESSING-NEC011</item>
+        <item> DISTRIBUTED-DATABASE-NCS067</item>
+        <item>DYNAMICS-OF-MACHINE-NME603 </item>
+        <item> EARTH-AND-EARTH-RETAINING-STRUCTURES-ECE022</item>
+        <item>EARTH-AND-EVIRONMENT-EEV011</item>
+        <item>E-BUSINESS-STRATEGIES-NIT066</item>
+        <item>E-COMMERCE-NCS068 </item>
+        <item> ENVIRONMENTAL-ECONOMICS-EEV0130</item>
+        <item> ENVIRONMENTAL-ENGINEERING-–-II-ECE602</item>
+        <item>ENVIRONMENTAL-ENGINEERING-–-II-NCE602 </item>
+        <item>ENVIRONMENTAL-MANAGEMENT-FOR-INDUSTRIES-ECE013</item>
+        <item>ENVIRONMENTAL-MANAGEMENT-FOR-INDUSTRIES-NCE013 </item>
+        <item> ERP-EIT602</item>
+        <item>FINITE-ELEMENT-METHOD-NME012 </item>
+        <item>FLUID-MACHINERY-EME011 </item>
+        <item>FLUID-MACHINERY-NME021</item>
+        <item>FUNDAMENTALS-OF-DIGITAL-SIGNAL-PROCESSING-EEN011 </item>
+        <item>GEOGRAPHIC-INFORMATION-SYSTEM-NIT065 </item>
+        <item>GRAPH-THEORY-ECS505 </item>
+        <item> HIGH-VOLTAGE-ENGINEERING-EEE021</item>
+        <item>HUMAN-COMPUTER-INTERFACE-NCS070</item>
+        <item>INDUSTRIAL-ELECTRONICS-NEC021 </item>
+        <item>INDUSTRIAL-MANAGEMENT-EHU601</item>
+        <item>INFORMATION-RETRIEVAL-AND-MANAGEMENT-NIT061</item>
+        <item>INFORMATION-SECURITY-AND-CYBER-LAWS-EIT505 </item>
+        <item> INTEGRATED-CIRCUITS-NEC501</item>
+        <item>INTEGRATED-CIRCUIT-TECHNOLOGY-NEC603 </item>
+        <item> INTELLIGENT-INSTRUMENTATION-EEE022</item>
+        <item>INTRODUCTION-TO-ELECTRIC-DRIVES-EEC604</item>
+        <item>INTRODUCTION-TO-SOFT-COMPUTING-NEURAL-NOE041 </item>
+        <item> KNOWLEDGE-BASED-DECISION-SUPPORT-SYSTEM-NIT064</item>
+        <item>LASER-SYSTEMS-AND-APPLICATIONS-NOE043 </item>
+        <item>MACHINE-DESIGN-II-EME602 </item>
+        <item>MATERIAL-SCIENCE-NOE047</item>
+        <item>MATRIX-ANALYSIS-OF-STRUCTRES-ECE012 </item>
+        <item>MATRIX-ANALYSIS-OF-STRUCTRES-NCE012 </item>
+        <item>MECHANICAL-VIBRATION-NME013 </item>
+        <item> MECHATRONICS-EEN021</item>
+        <item>MICROCONTROLLER-AND-ITS-APPLICATIONS-NEC022</item>
+        <item> MICROCONTROLLER-EEC014</item>
+        <item>MICROCONTROLLERS-FOR-EMBEDDED-SYSTEMS-NEC022R</item>
+        <item>MICROWAVE-ENGINEERING-EEC603 </item>
+        <item> MODELING-AND-SIMULATION-NIT062</item>
+        <item> NANO-SCIENCES-NOE042</item>
+        <item>NEURAL-NETWORKS-AND-FUZZY-SYSTEM-NEE013 </item>
+        <item>NEURAL-NETWORKS-AND-FUZZY-SYSTEM-NEN013</item>
+        <item>NON-CONVENTIONAL-ENERGY-RESOURCES-UTILIZATION-EME021</item>
+        <item>NUCLEAR-SCIENCE-NOE046 </item>
+        <item>OPTIMIZATION-TECHNIQUES-IN-ENGINEERING-EME023 </item>
+        <item>PARALLEL-ALGORITHM-NCS063 </item>
+        <item>POLYMER-SCIENCE-TECHNOLOGY-NOE045 </item>
+        <item>POST-SPINNING-OPERATION-EC012</item>
+        <item>POWER-ELECTRONICS-EEE602 </item>
+        <item>POWER-SYSTEM-ANALYSIS-EEE601 </item>
+        <item>POWER-SYSTEM-ANALYSIS-NEE601 </item>
+        <item> POWER-THEFT-AND-ENERGY-MANAGEMENT-NEE014</item>
+        <item>PRINCIPLES-OF-TOWN-PLANNING-AND-ARCHITECTURE-ECE014</item>
+        <item>PRINCIPLES-OF-TOWN-PLANNING-AND-ARCHITECTURE-NCE014 </item>
+        <item>PRODUCT-DEVELOMENT-DESIGN-NME022 </item>
+        <item>PRODUCT-DEVELOPMENT-DESIGN-EME013 </item>
+        <item> REAL-TIME-SYSTEM-NEC013R</item>
+        <item>REFRIGERATION-AIR-CONDITIONING-EME604</item>
+
+        <item>REFRIGERATION-AIR-CONDITIONING-NME604 </item>
+        <item>RELIABILITY-ENGINEERING-EME014</item>
+        <item> RELIABILITY-ENGINEERING-NME023</item>
+        <item>RURAL-WATER-SUPPLY-AND-SANITATION-ECE024 </item>
+        <item>SCIENCE-AND-POLICY-OF-CLIMATE-CHANGE-EEV021 </item>
+        <item> SMART-ENERGY-DELIVERY-SYSTEMS-NEE024</item>
+        <item>SOFTWARE-ENGINEERING-NCS602</item>
+        <item>SOFTWARE-PROJECT-MANAGEMENT-EIT601</item>
+        <item> SOFTWARE-QUALITY-ENGINEERING-EIT061</item>
+        <item>SOFTWARE-RELIABILITY-EIT063 </item>
+        <item>SOFTWARE-TESTING-EIT062 </item>
+        <item>SPACE-SCIENCE-NOE044 </item>
+        <item>SPECIAL-ELECTRICAL-MACHINE-NEE603</item>
+        <item>STRUCTURE-AND-PROPERTIES-OF-FIBRE-EC011 </item>
+        <item>SWITCH-GEAR-AND-PROTECTION-NEE602 </item>
+        <item> TECHNOLOGY-OF-FINISHING-–-1-EC604</item>
+        <item> THEORY-OF-MACHINES-II-EME603</item>
+        <item>TRANSPORTATION-ENGINEERING-II-ECE603</item>
+        <item>TRANSPORTATION-SYSTEM-AND-PLANNING-ECE023 </item>
+        <item>UNCONVENTIONAL-MANUFACTURING-PROCESSES-EME012 </item>
+        <item> VLSI-DESIGN-EEC027</item>
+        <item> WEB-TECHNOLOGY-ECS604</item>
+        <item>WIRELESS-COMMUNICATION-NEN022</item>
+
+
+    </string-array>
+    <string-array name="Six2016">
+        <item>-Select subject-</item>
+        <item>ADVANCED-SEMICONDUCTOR-DEVICES-EEC-013 </item>
+        <item> ANALOG-DIGITAL-COMMUNICATION-EEC-609</item>
+        <item>BIG-DATA-NIT-067 </item>
+        <item>BIOFUELS-ALCOHOL-TECHNOLGY-NBT-023</item>
+        <item>BIOINFORMATICS-II-NBT-603</item>
+        <item>BIOTECHNOLOGY-IN-HEALTH-CARE-NBT-012 </item>
+        <item> COMPILER-DESIGN-NCS-603ECS-603</item>
+        <item> COMPUTER-NETWORKS-ECS-601NCS-601</item>
+        <item>DATA-WAREHOUSING-DATA-MINING-NCS-066 </item>
+        <item>DEVELOPMENTAL-BIOTECHNOLOGY-NBT-022</item>
+        <item> DIGITAL-COMMUNICATION-NEC-602EEC-601</item>
+        <item> DIGITAL-SIGNAL-PROCESSING-EEC-602</item>
+        <item>DIGITAL-SIGNAL-PROCESSING-NEC-011 </item>
+        <item> DYNAMICS-OF-MACHINE-NME-603</item>
+        <item>ENGINEERING-OPTIMIZATION-NME-011</item>
+        <item> ENVIRONMENTAL-BIOTECHNOLOGY-NBT-602</item>
+        <item>FERMENTATION-BIOTECHNOLOGY-NBT-601EBT-601 </item>
+        <item>FLUID-MACHINERY-NME-021 </item>
+        <item> INDUSTRIAL-ENGINEERING-ME-401</item>
+        <item>INDUSTRIAL-MANAGEMENT-EHU-601NHU-601 </item>
+        <item>INTEGRATED-CIRCUIT-TECHNOLOGY-NEC-603 </item>
+        <item>INTRODUCTION-TO-ELECTRIC-DRIVES-EEC-604</item>
+        <item>KNOWLEDGE-BASED-DECISION-SUPPORT-SYSTEM-NIT-064</item>
+        <item>MACHINE-DESIGN-II-NME-602EME-602 </item>
+        <item>MICROCONTROLLER-EEC-014 </item>
+        <item>MICROCONTROLLER-ITS-APPLICATIONS-NEC-022 </item>
+        <item> MICROWAVE-ENGINEERING-EEC-603NEC-601</item>
+        <item>MOLECULAR-MODELING-DRUG-DESIGN-NBT-013</item>
+        <item>PARALLEL-ALGORITHMS-NCS-063 </item>
+        <item> POWER-ELECTRONICS-EEE-602</item>
+        <item>POWER-SYSTEM-ANALYSIS-EEE-601 </item>
+        <item> REFRIGERATION-AIR-CONDITIONING-NME-604EME-604</item>
+        <item>SOFTWARE-ENGINEERING-ECS-602NCS-602</item>
+        <item> SPECIAL-ELECTRICAL-MACHINE-NEE-603-NEN-014</item>
+        <item> SPECIAL-ELECTRICAL-MACHINES-EEE-012</item>
+        <item>SWITCHGEAR-PROTECTION-NEE-602 </item>
+        <item> THEORY-OF-MACHINES-II-EME-603</item>
+
+    </string-array>
+    <string-array name="Six2015">
+        <item>-Select subject-</item>
+        <item>A D C (EEC-609) </item>
+        <item>ADVANCED WELDING TECHNOLOGY (EME-022) </item>
+        <item>ANTEENA   WAVE PROPOGATION (EEC-029) </item>
+        <item>COMPILER DESIGN (ECS-603) </item>
+        <item>COMPUTER NETWORK (ECS-601)</item>
+        <item> DESIGN OF CONCRETE STRUCTURES -II (ECE 601)</item>
+        <item>DIGITAL COMMUNICATION (EEC-601) </item>
+        <item> DIGITAL SIGNAL PROCESSING (EEC-602)</item>
+        <item> E R P (EIT-602)</item>
+        <item>ENVIRONMENTAL ENGINEERING - 2 (ECE 602) </item>
+        <item> GRAPH THEORY (ECS-505)</item>
+        <item>INDUSTRIAL MANAGEMENT (EHU-601)</item>
+        <item>INFORMATION SECURITY AND CYBER LAWS (EIT-505)</item>
+        <item>INTRODUCTION TO ELECTRIC DRIVES (EEC-604) </item>
+        <item> MICROCONTROLLERS (EEC-014)</item>
+        <item> MICROWAVE ENGINEERING (EEC-603)</item>
+        <item>POWER ELECTRONICS (EEE-602) </item>
+        <item>POWER SYSTEM ANALYSIS (EEE-601)</item>
+        <item> PRINCIPLES OF TOWN PLANNING AND ARCHITECTURE (ECE014)</item>
+        <item>RURAL WATER SUPPLY   SANITATION (ECE 024) </item>
+        <item>SOFTWARE ENGINEERING (ECS-602) </item>
+        <item>SOFTWARE PROJECT MANAGEMENT (EIT-601) </item>
+        <item>SPECIAL ELECTRICAL MACHINES (EEE-012)</item>
+        <item>THEORY OF MACHINE II (EME-603) </item>
+        <item>TRANSPORTATION ENGINEERING - II (ECE 603) </item>
+        <item>UNCONVENTIONAL MANUFACTURING PROCESSES (EME-012) </item>
+        <item> WEB TECHNOLOGY (ECS-604)</item>
+
+    </string-array>
+    <string-array name="Six2014">
+        <item>-Select subject-</item>
+        <item> ADVANCED SEMICONDUCTOR DEVICES-(EEC-013)</item>
+        <item> ADVANCED WELDING TECHNOLOGY-(EME-022)</item>
+        <item>ANALOG   DIGITAL COMMUNICATION-(EEC-609)</item>
+        <item>ANIMAL BIOTECHNOLOGY-(EBT-011)</item>
+        <item>BIOPHYSICS-(EBT-022) </item>
+        <item> COMPILER DESIGN-(ECS-603)</item>
+        <item>COMPUTER NETWORK-(ECS-601) </item>
+        <item> DIGITAL COMMUNICATION-(EEC-601)</item>
+        <item>DIGITAL SINGNAL PROCESSING-(EEC-602)</item>
+        <item>ENZYME AND PROTEIN ENGINEERING-(EBT-021) </item>
+        <item> ERP-(EIT-602)</item>
+        <item>FERMENTATION BIOTECHNOLOGY-(EBT-601) </item>
+        <item>FLUID MACHINERY-(EME-011) </item>
+        <item>FOOD BIOTECHNOLOGY-(EBT-602)</item>
+        <item>GRAPH THEORY-(ECS-505) </item>
+        <item> HEAT   MASS TRANSFER-(ECH-606)</item>
+        <item>INDUSTRIAL MANAGEMENT-(EHU-601) </item>
+        <item>INFORMATION SECURITY AND CYBER LAWS-(EIT-505) </item>
+        <item> INTRODUCTION TO ELECTRIC DRIVES-(EEC-604)</item>
+        <item>MACHINE DESIGN-(EME-602) </item>
+        <item>MICROCONTROLLERS-(EEC-014)</item>
+        <item>MICROWAVE ENGINEERING-(EEC-603)</item>
+        <item>PLANT BIOTECHNOLOGY-(EBT-012) </item>
+        <item>POWER ELECTRONICS-(EEE-602) </item>
+        <item> POWER SYSTEM ANALYSIS-(EEE-601)</item>
+        <item>REFRIGERATION   AIR CONDITIONING-(EME-604) </item>
+        <item>SOFTWARE ENGINEERING-(ECS-602)</item>
+        <item>SOFTWARE PROJECT MANAGEMENT-(EIT-601) </item>
+        <item> SOFTWARE TESTING-(EIT-062)</item>
+        <item>SPECIAL ELECTRICAL MACHINES-(EEE-012) </item>
+        <item>WEB TECHNOLOGY-(ECS-604) </item>
+        <item>WIRELESS COMMUNICATION-(EEC-028)</item>
+
+    </string-array>
+    <string-array name="Eight2017">
+        <item>-Select subject-</item>
+        <item> ADDITIVE-MANUFACTURING-NME063</item>
+        <item>ADVANCE-CONTROL-SYSTEM-EEE052 </item>
+        <item> ADVANCED-DISPLAY-TECHNOLOGIES-SYSTEMS-NEC044</item>
+        <item>ADVANCED-WELDING-TECHNOLOGY-NME055</item>
+        <item>ADVANCE-SYNTHESIS-OF-MECHANISMS-EME054</item>
+        <item>ADVANCE-SYNTHESIS-OF-MECHANISMS-NME053 </item>
+        <item> ANALYSIS-AND-DESIGN-OF-HYDRAULIC-STRUCTURES-ECE052</item>
+        <item>ANALYSIS-AND-DESIGN-OF-HYDRAULIC-STRUCTURES-NCE052 </item>
+        <item>APPLIED-LINEAR-ALGEBRA-NOE049 </item>
+        <item>ARTIFICIAL-INTELLIGENCE-ECS801</item>
+        <item>AUTOMATION-ROBOTICS-EOE084 </item>
+        <item>AUTOMATION-ROBOTICS-NOE084 </item>
+        <item> BIO-MEDICAL-INSTRUMENTATION-EEE051</item>
+        <item> CLUSTER-COMPUTING-NCS083</item>
+        <item> COMPUTER-AIDED-DESIGN-ECE051</item>
+        <item> COMPUTER-AIDED-DESIGN-NCE051</item>
+        <item> COMPUTER-AIDED-PROCESS-PLANNIING-NME064</item>
+        <item>CONCEPTS-OF-MODERN-PHYSICS-EME056 </item>
+        <item>CONSTRUCTION-TECHNOLOGY-AND-MANAGEMENT-ECE801 </item>
+        <item>CRYPTOGRAPHY-NETWORK-SECURITY-ECS084 </item>
+        <item> DATA-COMPRESSION-NCS085</item>
+        <item>DBMS-DATA-MINING-AND-WAREHOUSE-NOE085</item>
+        <item>DESIGN-OF-THERMAL-SYSTEM-EME053</item>
+        <item>DESIGN-OF-THERMAL-SYSTEM-NME052 </item>
+        <item>DEVELOPMENT-OF-WET-PROCESSING-EC802 </item>
+        <item> DIGITAL-IMAGE-PROCESSING-EIT081</item>
+        <item> DIGITAL-SYSTEM-DESIGN-USING-VHDL-NEC042</item>
+        <item>DISCRETE-MATHEMATICS-NOE048</item>
+        <item>DISTRIBUTED-SYSTEM-ECS701 </item>
+        <item>EARTHQUAKE-RESISTANT-DESIGN-NCE064 </item>
+        <item>EHV-AC-DC-TRANSMISSION-NEN041 </item>
+        <item> ELECTRICAL-AND-ELECTRONICS-ENGG.-MATERIALS-NEE801</item>
+        <item>ELECTRONIC-SWITCHING-EEC802</item>
+        <item> EMBEDDED-SYSTEMS-NCS087</item>
+        <item>ENERGY-EFFICIENCY-CONSERVATION-EEE054 </item>
+        <item>ENERGY-MANAGEMENT-EME065 </item>
+        <item>EXPERIMENTAL-STRESS-ANALYSIS-NME061 </item>
+        <item> FINIT-ELEMENT-METHOD-EME061</item>
+        <item>FUNDAMENTALS-OF-BIOMEDICAL-ENGINEERING-EME066 </item>
+        <item>GRID-COMPUTING-NCS084</item>
+        <item>GROUND-IMPROVEMENT-TECHNIQUES-ECE061</item>
+        <item>GROUNDWATER-MANAGEMENT-NCE063 </item>
+        <item> HIGH-PERFORMANCE-COMPUTING-NCS081</item>
+        <item>IMAGE-PROCESSING-EEC068 </item>
+        <item>INDUSTRIAL-AUTOMATION-II-EOE085 </item>
+        <item> INTRODUCTION-TO-RADAR-SYSTEM-EEC035</item>
+        <item>MACHINE-FOUNDATION-DESIGN-ECE054 </item>
+        <item>MAINTENANCE-ENGINEERING-MANAGEMENT-EME052 </item>
+        <item> MICROWAVE-ENGINEERING-MEASUREMENT-EEC069B</item>
+        <item>MICROWAVE-RADAR-EEC066</item>
+        <item>MOBILE-COMPUTING-NIT801 </item>
+        <item>NATURAL-LANGUAGE-PROCESSING-ECS086 </item>
+        <item> NEURAL-NETWORK-ECS085</item>
+        <item> NON-CONVENTIONAL-ENERGY-RESOURCES-NOE081</item>
+        <item> NON-DESTRUCTIVE-TESTING-EME062</item>
+        <item>NON-LINEAR-DYNAMICS-SYSTEM-EOE082 </item>
+        <item>OPERATION-RESEARCH-EME051</item>
+        <item>OPTICAL-NETWORKS-NEC802</item>
+        <item> PATTERN-RECOGNITION-NCS080</item>
+        <item>PLANT-LAYOUT-MATERIAL-HANDLING-NME062 </item>
+        <item>POWER-CONVERTER-APPLICATIONS-EEE063 </item>
+        <item> POWER-PLANT-ENGINEERING-NME801</item>
+        <item>POWER-QUALITY-NEE042</item>
+        <item>PRODUCT-DEVELOPMENT-NOE083 </item>
+        <item>PRODUCTION-OPERATIONS-MANAGEMENT-EME064 </item>
+        <item>REAL-TIME-SYSTEM-ECS081 </item>
+        <item> RELIABILITY-ENGINEERING-EEE053</item>
+        <item>RIVER-ENGINEERING-NCE062</item>
+        <item>SATELLITE-AND-RADAR-SYSTEM-NEC045 </item>
+        <item>SATELLITE-COMMUNICATION-NEN044 </item>
+        <item>SCADA-ENERGY-MANAGEMENT-SYSTEM-EEE062 </item>
+        <item>SCADA-NEE044 </item>
+        <item>SIX-SIGMA-METHOD-AND-APPLICATION-EME055 </item>
+        <item>SOFT-COMPUTING-ECS088 </item>
+        <item>SOFTWARE-PROJECT-MANAGEMENT-ECS082</item>
+        <item>SPEECH-PROCESSING-NEC043</item>
+        <item>TECHNOLOGY-OF-PRINTING-II-EC801 </item>
+        <item> TRANSPORTATION-ENGINEERING-–-II-NCE801</item>
+        <item> WATER-RESOURCES-SYSTEMS-ECE053</item>
+        <item>WEB-TECHNOLOGY-EIT401 </item>
+        <item>WIRELESS-MOBILE-COMMUNICATION-EEC801</item>
+    </string-array>
+    <string-array name="Seven2019">
+        <item>-Select subject-</item>
+        <item>ANALOG-AND-DIGITAL-COMMUNICATION-NEC-702A </item>
+        <item> ARTIFICIAL-INTELLIGENCE-NCS-702</item>
+        <item>AUTOMOBILE-ENGINEERING-NME-702 </item>
+        <item>COMPUTER-AIDED-MANUFACTURING-NME-031NPL-031 </item>
+        <item>CRYPTOGRAPHY-AND-NETWORK-SECURITY-NIT-701 </item>
+        <item>DATA-COMMUNICATION-NETWORKS-NEC-702BEEC-702 </item>
+        <item>DESIGN-OF-STEEL-STRUCTURES-NCE-701ECE-701</item>
+        <item>DISTRIBUTED-SYSTEMS-NCS-701</item>
+        <item> ELECTRIC-DRIVES-NEN-701</item>
+        <item> ENGINEERING-HYDROLOGY-NCE-035</item>
+        <item> ENTREPRENEURSHIP-DEVELOPMENT-NOE-071</item>
+        <item>INFORMATION-THEORY-AND-CODING-NEC-031 </item>
+        <item>OPEN-CHANNEL-FLOW-NCE-043-ECE-043</item>
+        <item> OPERATIONS-RESEARCH-NOE-073</item>
+        <item>OPTICAL-COMMUNICATION-NEC-701 </item>
+        <item> POWER-STATION-PRACTICE-NEE-702NEN-702EEE-042</item>
+        <item>SOFTWARE-PROJECT-MANAGEMENT-NOE-077 </item>
+        <item>SOFTWARE-TESTING-AND-AUDIT-NCS-071</item>
+        <item> TOTAL-QUALITY-MANAGEMENT-NME-041</item>
+        <item> VLSI-DESIGN-NEC-703</item>
+        <item>WATER-RESOURCES-ENGINEERING-NCE-702ECE-702 </item>
+
+
+    </string-array>
+    <string-array name="Seven2018">
+        <item>-Select subject-</item>
+
+        <item>ARTIFICIAL-INTELLIGENCE-NCS-702 </item>
+        <item> AUTOMOBILE-ENGINEERING-NME-702</item>
+        <item>CRYPTOGRAPHY-NETWORK-SECURITY-NIT-701 </item>
+        <item>COMPUTER-AIDED-DESIGN-NME-701</item>
+        <item>DATA-COMMUNICATION-NETWORKS-NEC-702B</item>
+        <item>DESIGN-OF-STEEL-STRUCTURES-NCE-701 </item>
+        <item> DIGITAL-IMAGE-PROCESSING-NEC-032</item>
+        <item> DISTRIBUTED-SYSTEM-ECS-701</item>
+        <item>ELECTRIC-DRIVES-NEN-701 </item>
+        <item>ENGINEERING-HYDROLOGY-NCE-035</item>
+        <item>ENTREPRENEURSHIP-DEVELOPMENT-NOE-071 </item>
+        <item>OPTICAL-COMMUNICATION-NEC-701 </item>
+        <item> POWER-STATION-PRACTICE-NEE-702-NEN-702</item>
+        <item> POWER-SYSTEM-OPERATION-AND-CONTROL-NEE0-31-NEN-031-EEE-031</item>
+        <item>SOFTWARE-PROJECT-MANAGEMENT-NOE-77</item>
+
+    </string-array>
+    <string-array name="Seven2017">
+        <item>-Select subject-</item>
+
+        <item> ANALOG-DIGITAL-COMMUNICATION-NEC-702-A</item>
+        <item> ARTIFICIAL-INTELLIGENCE-NCS-702</item>
+        <item> AUTOMOBILE-ENGINEERING-NME-702</item>
+        <item> COMPUTER-AIDED-DESIGN-NME-701NPL-701</item>
+        <item>COMPUTER-AIDED-MANUFACTURING-NME-031NPL-031 </item>
+        <item> CRYPTOGRAPHIC-AND-NETWORK-SECURITY-NIT-701</item>
+        <item>DATA-COMMUNICATION-NETWORKS-NEC-702-B</item>
+        <item>DESIGN-OF-STELL-STRUCTURES-NCE-701</item>
+        <item> DIGITAL-IMAGE-PROCESSING-NEC-032</item>
+        <item> DISTRIBUTED-SYSTEM-NCS-701</item>
+        <item>ELECTRIC-DRIVES-NEN-701NEE-701 </item>
+        <item>ENGINEERING-HYDROLOGY-NCE-035 </item>
+        <item>INDUSTRIAL-POLLUTION-CONTROL-AND-ENVIRONMENTAL-AUDIT-NCE-034</item>
+        <item>OPEN-CHANNEL-FLOW-NCE-043 </item>
+        <item> OPTICAL-COMMUNICATION-NEC-701</item>
+        <item> PROJECT-MANAGEMENT-NME-032NPL-032</item>
+        <item> SOFTWARE-PROJECT-MANAGEMENT-NOE-077</item>
+        <item>SOFTWARE-TESTING-AUDIT-NCS-071</item>
+        <item>TUNNEL-ENGINEERING-NCE-044 </item>
+        <item>VLSI-DESIGN-NEC-703 </item>
+        <item>WATER-RESOURCES-ENGINEERING-NCE-702 </item>
+
+    </string-array>
+    <string-array name="Seven2016">
+
+        <item>-Select subject-</item>
+        <item> ARTIFICIAL-INTELLIGENCE-ECS-801</item>
+        <item>AUTOMOBILE-ENGINEERING-EME-702 </item>
+        <item> BIOETHICSBIOSAFETY-IPR-EBT-702</item>
+        <item>BIOPROCESS-ENGINEERING-II-EBT-042</item>
+        <item>COMPUTER-AIDED-DESIGN-EME-701</item>
+        <item>COMPUTER-AIDED-MANUFACTURING-EPL-031EME-031 </item>
+        <item>CRYPTOGRAPHY-NETWORK-SECURITY-EIT-701 </item>
+        <item>DATA-COMMUNICATION-NETWORKS-EEC-702 </item>
+        <item>DATA-COMPRESSION-ECS-077 </item>
+        <item>DESIGN-OF-STEEL-STRUCTURE-ECE-701</item>
+        <item>DIGITAL-IMAGE-PROCESSING-ECS-702 </item>
+        <item>DISTRIBUTED-SYSTEMS-ECS-701 </item>
+        <item> DOWN-STREAM-PROCESSING-EBT-701</item>
+        <item> ELECTRICAL-INSTRUMENTATION-PROCESS-CONTROL-EEN-701EEE-504</item>
+        <item>ENTERPRENEURSHIP-DEVELOPMENT-EOE-071</item>
+        <item> IT-IN-FORENSIC-SCIENCE-EIT-074</item>
+        <item>MOLECULAR-MODELING-DRUG-DESIGN-EBT-041 </item>
+        <item> OPTICAL-COMMUNICATION-EEC-701</item>
+        <item>PATTERN-RECOGNITION-ECS-074 </item>
+        <item>POWER-STATION-PRACTICE-EEE-042 </item>
+        <item>PROJECT-MANAGEMENT-EPL-032EME-032 </item>
+        <item>QUALITY-MANAGEMENT-EOE-072</item>
+        <item>SATELLITE-COMMUNICATION-EEC-021</item>
+        <item>SWITCH-GEAR-PROTECTION-EEE-701 </item>
+        <item> TELEMETRY-DATA-TRANSMISSION-EEC-046</item>
+        <item>THERMAL-TURBO-MACHINE-EME-042 </item>
+        <item>TOTAL-QUALITY-MANAGEMENT-EME-041EPL-041 </item>
+        <item>VACCINE-TECHNOLOGY-IMMUNOINFOMATICS-EBT-031</item>
+        <item> VLSI-DESIGN-EEC-703</item>
+        <item> WATER-RESOURCE-ENGINEERING-ECE-702</item>
+
+
+    </string-array>
+    <string-array name="Seven2015">
+        <item>-Select subject-</item>
+        <item>Artificial Intelligence (ECS-801) </item>
+        <item>Automobile Engineering (EME-702) </item>
+        <item>Bioethics Biosafety and Ipr (EBT-702)</item>
+        <item>Biofuels   Alcohol Technology (EBT-032) </item>
+        <item> Bioproceess Engineering - II (EBT-042)</item>
+        <item> CAD (EME-701)</item>
+        <item>Computational Complexity (ECS-072) </item>
+        <item>Computer Aided Manufacturing (EME-301) </item>
+        <item> Cryptography and Network Security (EIT-701)</item>
+        <item>Data Communication Networks (EEC-702)</item>
+        <item>Data Minig   data Warehousing (ECS-075)</item>
+        <item> DESIGN-OF-STEEL-STRUCTURE-ECE-701</item>
+        <item>Digital Image Processing (ECS-702) </item>
+        <item>Discrete Stuctures (EIT-071) </item>
+        <item> Distributed Systems (ECS-701)</item>
+        <item>Downstream Processing (EBT-701)</item>
+        <item>Electric Drive Electrical Engineering (EEE-702 EEE-035) </item>
+        <item>ENGINEERING-HYDROLOGY-ECE-035 </item>
+        <item> Entrepreneurship Develoment (EOE-071)</item>
+        <item> Molecular Modeling and Drug Design (EBT-041)</item>
+        <item>Optical Communication (EEC-701)</item>
+        <item> Pattern Recognition (ECS-074)</item>
+        <item>Project Management(Mechanical Engg.)-(EME-032) </item>
+        <item>Quality Management (EOE-072) </item>
+        <item>Satellite Communication (EEC-021) </item>
+        <item>Switchgear and Protection (EEE-701) </item>
+        <item>Telemetry and data Transmission (EEC-046) </item>
+        <item>Thermal Turbomachines (EME-042)</item>
+        <item>Total Quality Management (EME-041 EPL-041)</item>
+        <item>Vaccine Technology   Immunoinformatics (EBT-031) </item>
+        <item> VLSI Design (EEC-703)</item>
+        <item> WATER-RESOURCES-ENGINEERING-ECE-702</item>
+
+
+    </string-array>
+    <string-array name="Seven2014">
+        <item>-Select subject-</item>
+        <item>ARTIFICIAL INTELLIGENCE (ECS-801) </item>
+        <item>AUTOMOBILE ENGINEERING (EME-702)</item>
+        <item>BIOETHICS BIOSAFETY AND IPR (EBT-702) </item>
+        <item> BIOFUELS AND ALCOHOL TECHNOLOGY (EBT-032)</item>
+        <item> BIOPROCESS ENGINEERING-II (EBT- 042)</item>
+        <item>COMPUTER AIDED DESIGN (EME-701) </item>
+        <item>COMPUTER AIDED MANUFACTURING (EME-031)</item>
+        <item> CRYPTOGRAPHY AND NETWORK SECURITY (EIT-701)</item>
+        <item> DATA COMMUNICATION NETWORKS (EEC-702)</item>
+        <item>DATA COMPRESSION (ECS-077) </item>
+        <item>DATA MINING AND DATA WAREHOUSING (ECS-075) </item>
+        <item>DESIGN-OF-STEEL-STRUCTURES-ECE-701</item>
+        <item> DESTRIBUTED DATABASE (ECS-076)</item>
+        <item>DIGITAL IMAGE PROCESSING (ECS-702) </item>
+        <item>DISCRETE STRUCTURES (EIT-071) </item>
+        <item>DISTRIBUTED SYSTEMS (ECS-701) </item>
+        <item>DOWNSTREAM PROCESSING (EBT-701)</item>
+        <item>ELECTRIC DRIVES (EEE-035)</item>
+        <item> ENGINEERING-HYDROLOGY-ECE-035</item>
+        <item> ENTREPRENEURSHIP DEVELOPMENT (EOE071)</item>
+        <item>OPTICAL COMMUNICATION (EEC-701) </item>
+        <item>PATTERN RECOGNITION (ECS-074) </item>
+        <item>PROJECT MANAGEMENT (EME-032)</item>
+        <item>QUALITY MANAGEMENT (EOE-072) </item>
+        <item>SATELLTE COMMUNICATION (EEC021) </item>
+        <item>SWITCH GEAR AND PROTECTION (EEE-701) </item>
+        <item>TELEMETRY AND DATA TRANMISSION (EEC-046) </item>
+        <item>TOTAL-QUALITY-MANAGEMENT-EME-041</item>
+        <item>VLSI DESIGN (EEC-703) </item>
+        <item>WATER-RESOURCES-ENGINEERING-ECE-702 </item>
+
+
+    </string-array>
+    <string-array name="Eight2019">
+
+
+    </string-array>
+    <string-array name="Eight2018">
+        <item>-Select subject-</item>
+
+        <item> ANALYSIS-AND-DESIGN-OF-HYDRAULIC-STRUCTURES-NCE052</item>
+        <item> DATA-COMPRESSION-NCS085</item>
+        <item>DIGITAL-IMAGE-PROCESSING-NCS801</item>
+        <item> EARTHQUAKE-RESISTANT-DESIGN-OF-STRUCTURES-NCE064</item>
+        <item> ELECTRICAL-ELECTRONICS-ENGINEERING-MATERIAL-NEE801</item>
+        <item>EMBEDDED-SYSTEMS-NEC803</item>
+        <item> MOBILE-COMPUTING-NIT801</item>
+        <item>NON-DESTRUCTIVE-TESTING-NME065 </item>
+        <item>OPERATIONS-RESEARCH-NME051</item>
+        <item> OPTICAL-NETWORK-NEC802</item>
+        <item> POWER-PLANT-ENGINEERING-NME801</item>
+        <item>SATELLITE-AND-RADAR-SYSTEMS-NEC045</item>
+        <item>SATELLITE-COMMUNICATION-NEN044 </item>
+        <item>TRANSPORTATION-ENGINEERING-–-II-NCE801 </item>
+        <item>WIRELESS-MOBILE-COMMUNICATION-NEC801</item>
+
+    </string-array>
+
+    <string-array name="Eight2016">
+        <item>-Select subject-</item>
+        <item>ARTIFICIAL-INTELLIGENCE-ECS-801 </item>
+        <item>BIOMEDICAL-INSTRUMENTATION-EBT-061 </item>
+        <item>BIOTECHNOLOGY-IN-HEALTH-CARE-EBT-051</item>
+        <item> CRYPTOGRAPHY-NETWORK-SECURITY-ECS-084</item>
+        <item>DATA-COMMUNICATION-NETWORKS-EEC-809</item>
+        <item>DISTRIBUTED-SYSTEM-ECS-701 </item>
+        <item>ENERGY-EFFICIENCY-CONSERVATION-EEE-054 </item>
+        <item>ENVIRONMENTAL-BIOTECHNOLOGY-EBT-801</item>
+        <item> INTRODUCTION-TO-RADAR-SYSTEMS-EEC-035</item>
+        <item>MOBILE-COMPUTING-ECS-087 </item>
+        <item>MULTIMEDIA-SYSTEM-EIT-082EEC-069A</item>
+        <item> NATURAL-LANGUAGE-PROCESSING-ECS-086</item>
+        <item>NON-CONVENTIONAL-ENERGY-RESOURCES-EOE-081</item>
+        <item>NON-DESTRUCTIVE-TESTING-EME-062 </item>
+        <item>OPERATIONS-RESEARCH-EPL-051-EME-051 </item>
+        <item>POWER-PLANT-ENGINEERING-EME-801</item>
+        <item>PRODUCTION-AND-OPERATIONS-MANAGEMENT-EME-064 </item>
+        <item>SATELITE-COMMUNICATION-EEC-069B </item>
+        <item>SIX-SIGMA-METHODS-APPLICATIONS-EME-055</item>
+        <item> SOFTWARE-PROJECT-MANAGEMENT-ECS-082</item>
+        <item>WIRELESS-MOBILE-COMMUNICATION-EEC-801</item>
+
+
+    </string-array>
+    <string-array name="Eight2015">
+        <item>-Select subject-</item>
+        <item>ARTIFICIAL INTELLIGENCE (ECS-801) </item>
+        <item> CRYPTOGRAPHY   NETWORK SECURITY (ECS-084)</item>
+        <item>DISTRIBUTED SYSTEM (ECS-701)</item>
+        <item>ELECTRONICS SWITCHING (EEC 802) </item>
+        <item> ENERGY EFFICIENCY   CONSERVATION (EEE-054)</item>
+        <item>INTRODUCTION TO RADAR SYSTEMS (EEC-035)</item>
+        <item>MOBILE COMPUTING (ECS-087) </item>
+        <item> MULTIMEDIA SYSTEMS (EEC-069(A0 EIT-082)</item>
+        <item>NON CONVENTIONAL ENERGY RESOURCES (EOE-081)</item>
+        <item>NON- DESTRUCTIVE TESTING (EME-062) </item>
+        <item>OPERATIONS RESEARCH (EME-051) </item>
+        <item>POWER PLANT ENGINEERING (EME-801)</item>
+        <item>SATELLITE COMMUNICATION (EEC-069B) </item>
+        <item> WIRELESS   MOBILE COMMUNICATION (EEC 801)</item>
+
+
+    </string-array>
+    <string-array name="Eight2014">
+        <item>-Select subject-</item>
+        <item> ARTIFICIAL INTELLIGENCE-(ECS-801)</item>
+        <item>AUTOMATION AND ROBOTICS-(EOE-084) </item>
+        <item>BIOTECHNOLOGY IN HEALTH CARE-(EBT-051)</item>
+        <item> CRYPTOGRAPHY AND NETWORK SECURITY-(ECS-084)</item>
+        <item>DATA COMMUNICATION NETWORKS-(EEC-809) </item>
+        <item>DIGITAL SYSTEM DESIGN USING VHDL-(EEC-032)</item>
+        <item> DISTRIBUTED SYSTEMS-(ECS-701)</item>
+        <item> ELECTRONICS SWITCHING-(EEC-802)</item>
+        <item>ENERGY EFFICIENCY AND CONSERVATION-(EEE-054)</item>
+        <item>ENVIRONMENTAL BIOTECHNOLOGY-(EBT-801) </item>
+        <item>GENOMICS AND PROTEOMICS-(EBT-062) </item>
+        <item>INTRODUCTION TO RADAR SYSTEMS-(EEC-035)</item>
+        <item> MOBILE COMPUTING-(ECS-087)</item>
+        <item>MULTIMEDIA SYSTEMS-(EEC-069A EIT-082) </item>
+        <item>NANOBIOTECHNOLOGY-(EBT-052)</item>
+        <item>NON CONVERNTIONAL ENERGY RESOURCES-(EOE-081) </item>
+        <item> OPERATIONS RESEARCH-(EME-051)</item>
+        <item>OPTICAL NETWORKS-(EEC-031)</item>
+        <item> POWER PLANT ENGINEERING-(EME-801)</item>
+        <item>PRODUCTION AND OPERATIONS MANAGEMENT-(EME-064) </item>
+        <item>SATELLITE COMMUNICATION-(EEC-069)</item>
+        <item>SIX SIGMA METHODS AND APPLICATIONS-(EME-055) </item>
+        <item>SOFTWARE PROJECT MANAGEMENT-(ECS-082) </item>
+        <item>WIRELESS   MOBILE COMMUNICATION-(EEC-801)</item>
+    </string-array>
+    <string-array name="year">
+        <item>Select Year</item>
+        <item>2014</item>
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+    </string-array>
+    <string-array name="class1">
+        <item>Select Class</item>
+        <item>10</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="c10sub">
+        <item>Select Subject</item>
+        <item>10 class-</item>
+        <item>Mathematics</item>
+        <item>Science</item>
+        <item>Social Science</item>
+        <item>Hindi</item>
+        <item>English </item>
+        <item>12 class-</item>
+        <item>Mathematics</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Hindi</item>
+        <item>English</item>
+        <item>Biology</item>
+        <item>Economics</item>
+        <item>Accountancy</item>
+        <item>Business Studies</item>
+        <item>Computer Science</item>
+    </string-array>
+    <string-array name="i12sub">
+        <item>Select Subject</item>
+        <item>ISC-</item>
+        <item>Mathematics</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <item>Hindi</item>
+        <item>English</item>
+        <item>Biology</item>
+        <item>Economics</item>
+        <item>Accounts</item>
+        <item>Commerce</item>
+        <item>Computer Science</item>
+        <item>ICSE-</item>
+        <item> Mathematics</item>
+        <item>Physics </item>
+        <item> Chemistry</item>
+        <item>Biology </item>
+        <item>Hindi </item>
+        <item> Geography</item>
+        <item> History and Civics</item>
+        <item>English</item>
+        <item>Computer Application </item>
+        <item> </item>
+    </string-array>
+    <string-array name="cdssub">
+        <item>Select Subject</item>
+        <item>English</item>
+        <item>Mathematics </item>
+        <item> General Knowledge</item>
+
+    </string-array>
+    <string-array name="ndasub">
+        <item>Select Subject</item>
+        <item>Mathematics </item>
+        <item> General Ability Test</item>
+    </string-array>
+    <string-array name="paper">
+        <item>Select Paper Number</item>
+        <item> paper1</item>
+        <item>paper2 </item>
+    </string-array>
+    <string-array name="paper1">
+        <item>Select Paper</item>
+        <item> General Studies</item>
+        <item>Engineering Specific</item>
+    </string-array>
+    <string-array name="branch">
+        <item>Select Branch</item>
+        <item>Civil Engineering </item>
+        <item> Electrical Engineering</item>
+        <item> Mechanical Engineering</item>
+    </string-array>
+    <string-array name="branch1">
+        <item>Select Branch</item>
+        <item>Civil Engineering </item>
+        <item> Electrical Engineering</item>
+        <item> Mechanical Engineering</item>
+        <item> Electrical and Communication Engineering</item>
+        <item> Computer Science and Information Technology</item>
+    </string-array>
+
+    <string-array name="paper2">
+        <item>Select Paper</item>
+        <item> General Studies-1</item>
+        <item>General Studies-2</item>
+    </string-array>
+    <string-array name="paper3">
+        <item>Select Paper</item>
+        <item> General Studies-1</item>
+        <item>General Studies-2</item>
+        <item> General Studies-3</item>
+        <item>General Studies-4</item>
+        <item> Essay</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="paper4">
+        <item>Select Paper Number</item>
+        <item> Paper1</item>
+        <item>Paper2 </item>
+    </string-array>
+    <string name="title_activity_advance">advance</string>
+<!--    <string name="placement_Id">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>-->
+    <string name="placement_Id">2834719453436706_2834747263433925</string>
+    <string name="Placement_ID_Interstitial">2834719453436706_2834869536755031</string>
+<!--    <string name="Placement_ID_Interstitial">549167759165615_549190905829967</string>-->
+
+
+</resources>

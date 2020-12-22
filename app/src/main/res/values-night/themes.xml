@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.QuestionBank" parent="Theme.Design.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#B880FB</item>
+        <item name="colorPrimaryVariant">#3C01C1</item>
+        <item name="colorOnPrimary">#040303</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#03E8D2</item>
+        <item name="colorSecondaryVariant">#02E3CD</item>
+        <item name="colorOnSecondary">#050505</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <group android:checkableBehavior="single">
+     <item android:id="@+id/ql" android:title="Question Bank " android:icon="@drawable/ic_library_books_black_24dp"/>
+    <item android:id="@+id/hp" android:title="Help" android:icon="@drawable/ic_help_black_24dp"/>
+    <item android:id="@+id/fb" android:title="Feedback" android:icon="@drawable/ic_feedback_black_24dp"/>
+    <item android:id="@+id/rate" android:title="Rate This App" android:icon="@drawable/ic_star_black_24dp"/>
+    <item android:id="@+id/ad" android:title="About Developer" android:icon="@drawable/ic_person_black_24dp"/>
+        <item android:id="@+id/share" android:title="Share This App" android:icon="@drawable/ic_share_black_24dp"/>
+
+    </group>
+
+</menu>
