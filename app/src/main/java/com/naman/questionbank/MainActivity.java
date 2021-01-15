@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,6 +24,13 @@ import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.naman.questionbank.login.login;
 
 import static android.view.Gravity.START;
 
@@ -32,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView aktupaper, iscpaper, cbsepaper, advancepaper, jeepaper, ndapaper, neetpaper, cdspaper, gatepaper, iprepaper, imainpaper, cmainpaper, cprepaper;
     private DrawerLayout drawer;
     Button draw;
+    private TextView login,username;
     private AdView adView;
 
     @Override
@@ -39,7 +48,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        login=findViewById(R.id.login);
+        username=findViewById(R.id.username);
 
+
+
+        if (FirebaseAuth.getInstance().getCurrentUser()==null){
+            login.setVisibility(View.VISIBLE);
+            username.setVisibility(View.GONE);
+        }else{
+            login.setVisibility(View.GONE);
+            username.setVisibility(View.VISIBLE);
+            getUsername();
+        }
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
+                startActivity(i);
+            }
+        });
+
+        username.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,profileActivity.class);
+                startActivity(i);
+            }
+        });
 
         AudienceNetworkAds.initialize(this);
         adView = new AdView(this, getString(R.string.placement_Id), AdSize.BANNER_HEIGHT_50);
@@ -88,6 +125,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gatepaper.setOnClickListener(this);
 
 
+    }
+
+    private void getUsername() {
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        db.child(getString(R.string.dbname_users))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(getString(R.string.username))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        username.setText(snapshot.getValue().toString());
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 
 
@@ -189,6 +244,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Intent i;
         switch (menuItem.getItemId()){
+            case  R.id.profile:
+                i = new Intent(this, profileActivity.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(i);
+                break;
             case R.id.fb:
 
                 i = new Intent(this, feedback.class);

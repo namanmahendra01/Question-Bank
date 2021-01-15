@@ -3,69 +3,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.naman.questionbank">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <application
-
-
         android:allowBackup="true"
+        android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:appComponentFactory"
-        android:appComponentFactory="whateverString">
-        <activity android:name="com.naman.questionbank.help" android:alwaysRetainTaskState="true" android:screenOrientation="portrait"></activity>
-        <activity android:name="com.naman.questionbank.aboutdeveleper" android:alwaysRetainTaskState="true"  android:screenOrientation="portrait" />
-        <activity android:name="com.naman.questionbank.questionbanklist" android:alwaysRetainTaskState="true" android:screenOrientation="portrait" />
-        <activity android:name="com.naman.questionbank.feedback" android:alwaysRetainTaskState="true" android:screenOrientation="portrait" />
-        <activity android:name="com.naman.questionbank.imain" android:alwaysRetainTaskState="true" />
-        <activity android:name="com.naman.questionbank.ipre" android:alwaysRetainTaskState="true" />
-        <activity android:name="com.naman.questionbank.cpre" android:alwaysRetainTaskState="true" />
-        <activity android:name="com.naman.questionbank.cmain"  android:alwaysRetainTaskState="true"/>
-        <activity android:name="com.naman.questionbank.gate" android:alwaysRetainTaskState="true" />
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".AddResourceActivity"></activity>
+        <activity android:name=".profileActivity" />
         <activity
-            android:name="com.naman.questionbank.advance"
-            android:alwaysRetainTaskState="true" />
-        <activity android:name="com.facebook.ads.AudienceNetworkActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:name=".help"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.cds"
-            android:alwaysRetainTaskState="true" />
+            android:name=".aboutdeveleper"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.neet"
-            android:alwaysRetainTaskState="true" />
+            android:name=".questionbanklist"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.nda"
-            android:alwaysRetainTaskState="true" />
+            android:name=".login.login"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.jee"
-            android:alwaysRetainTaskState="true" />
+            android:name=".login.register"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.semester"
-            android:alwaysRetainTaskState="true" />
+            android:name=".feedback"
+            android:alwaysRetainTaskState="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name="com.naman.questionbank.ViewActivity"
+            android:name=".imain"
             android:alwaysRetainTaskState="true" />
         <activity
-            android:name="com.naman.questionbank.cbse"
+            android:name=".ipre"
             android:alwaysRetainTaskState="true" />
         <activity
-            android:name="com.naman.questionbank.isc"
+            android:name=".cpre"
             android:alwaysRetainTaskState="true" />
         <activity
-            android:name="com.naman.questionbank.aktu"
+            android:name=".cmain"
             android:alwaysRetainTaskState="true" />
         <activity
-            android:name="com.naman.questionbank.MainActivity"
+            android:name=".gate"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".advance"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name="com.facebook.ads.AudienceNetworkActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".cds"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".neet"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".nda"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".jee"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".semester"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".ViewActivity"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".cbse"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".isc"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".aktu"
+            android:alwaysRetainTaskState="true" />
+        <activity
+            android:name=".MainActivity"
             android:alwaysRetainTaskState="true"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.naman.questionbank.splash"
+            android:name=".splash"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,7 +100,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

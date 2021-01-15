@@ -5,6 +5,20 @@
     <string name="Close">Close</string>
 
 
+    <string name="title_activity_advance">advance</string>
+    <string name="placement_Id">2834719453436706_2834747263433925</string>
+    <string name="Placement_ID_Interstitial">2834719453436706_2834869536755031</string>
+    <string name="dbname_username">username</string>
+    <string name="dbname_users">users</string>
+    <string name="email">e</string>
+    <string name="username">u</string>
+    <string name="dbname_Resource">Resources</string>
+    <string name="field_resource_id">ri</string>
+    <string name="field_user_id">ui</string>
+    <string name="field_title">ttl</string>
+    <string name="field_tags">tg</string>
+    <string name="field_link">lk</string>
+    <string name="field_timestamp">tim</string>
     <string-array name="semester">
         <item>Select Semester</item>
         <item>One</item>
@@ -1400,6 +1414,7 @@
 
 
     </string-array>
+
     <string-array name="Seven2014">
         <item>-Select subject-</item>
         <item>ARTIFICIAL INTELLIGENCE (ECS-801) </item>
@@ -1459,7 +1474,6 @@
         <item>WIRELESS-MOBILE-COMMUNICATION-NEC801</item>
 
     </string-array>
-
     <string-array name="Eight2016">
         <item>-Select subject-</item>
         <item>ARTIFICIAL-INTELLIGENCE-ECS-801 </item>
@@ -1608,6 +1622,7 @@
         <item> paper1</item>
         <item>paper2 </item>
     </string-array>
+
     <string-array name="paper1">
         <item>Select Paper</item>
         <item> General Studies</item>
@@ -1627,12 +1642,12 @@
         <item> Electrical and Communication Engineering</item>
         <item> Computer Science and Information Technology</item>
     </string-array>
-
     <string-array name="paper2">
         <item>Select Paper</item>
         <item> General Studies-1</item>
         <item>General Studies-2</item>
     </string-array>
+    <!--    <string name="placement_Id">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>-->
     <string-array name="paper3">
         <item>Select Paper</item>
         <item> General Studies-1</item>
@@ -1647,11 +1662,7 @@
         <item> Paper1</item>
         <item>Paper2 </item>
     </string-array>
-    <string name="title_activity_advance">advance</string>
-<!--    <string name="placement_Id">IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID</string>-->
-    <string name="placement_Id">2834719453436706_2834747263433925</string>
-    <string name="Placement_ID_Interstitial">2834719453436706_2834869536755031</string>
-<!--    <string name="Placement_ID_Interstitial">549167759165615_549190905829967</string>-->
+    <!--    <string name="Placement_ID_Interstitial">549167759165615_549190905829967</string>-->
 
 
 </resources>

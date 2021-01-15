@@ -14,10 +14,6 @@
     android:id="@+id/drawer_layout"
     >
 
-
-
-
-
     <ScrollView
         android:layout_marginTop="?attr/actionBarSize"
     android:layout_width="match_parent"
@@ -29,13 +25,74 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="10dp"
+                app:cardCornerRadius="10dp">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Login"
+                    android:id="@+id/login"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Username"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/username"
+                    android:drawableLeft="@drawable/ic_person_black_24dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:layout_marginRight="5dp"/>
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                >
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+
+                    android:layout_centerHorizontal="true"
+                    app:cardBackgroundColor="#ffffff"
+                    app:cardCornerRadius="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:text="Enter Forum"
+                        android:padding="5dp"
+
+                        android:textColor="#000000"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginRight="20dp">
 
 
@@ -50,7 +107,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="78dp"
                     android:layout_marginLeft="78dp"
-                    android:layout_marginTop="22dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginEnd="69dp"
                     android:layout_marginRight="69dp"
                     android:layout_marginBottom="-6dp"
@@ -63,7 +120,6 @@
                     android:textStyle="bold" />
 
             </RelativeLayout>
-
 
 
             <GridLayout
@@ -627,8 +683,13 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#2B87EB"
             android:elevation="4dp"
+            android:layout_gravity="right"
+
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+
+        </androidx.appcompat.widget.Toolbar>
 
         <FrameLayout
             android:id="@+id/fragment_container"

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/softBlack">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/sb"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+<include layout="@layout/snippet_searchbar"/>
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+    android:layout_below="@+id/sb"
+        tools:listitem="@layout/forum_item"
+    android:layout_height="wrap_content"
+    android:id="@+id/Rv"
+    />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/ask"
+        android:layout_margin="20dp"/>
+
+</RelativeLayout>

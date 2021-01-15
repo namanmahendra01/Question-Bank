@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/softBlack"
+    tools:context=".AddResourceActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Add Resource"
+      android:textSize="28sp"
+      android:textColor="@color/deeppurple"
+      android:fontFamily="sans-serif-smallcaps"
+      android:textStyle="bold"
+      android:layout_gravity="center"
+      android:layout_margin="20dp"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rectangular_border"
+                android:hint="Paste Resource Link Here"
+                android:inputType="textUri"
+
+                android:gravity="center"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:padding="10dp"
+                android:id="@+id/link"
+                android:textSize="18sp"
+                android:imeOptions="actionNext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:hint="tag 1"
+                android:padding="10dp"
+                android:background="@drawable/rectangular_border"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:id="@+id/tag1"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:imeOptions="actionNext"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tag2"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:hint="tag 2"
+                android:padding="10dp"
+                android:background="@drawable/rectangular_border"
+                android:maxLength="16"
+                android:gravity="center"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:hint="tag 3"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/rectangular_border"
+                android:maxLength="16"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:id="@+id/tag3"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:hint="Enter title"
+                android:gravity="center"
+                android:padding="10dp"
+                android:background="@drawable/rectangular_border"
+                android:maxLength="16"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/black"
+                android:id="@+id/title"
+                android:textSize="18sp"
+                android:imeOptions="actionDone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@+id/linearLayout1"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="Add"
+            android:id="@+id/add"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:background="@drawable/edit_round1">
+
+        </androidx.appcompat.widget.AppCompatButton>
+        <ProgressBar
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/pro"
+            android:visibility="gone"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+</ScrollView>
+
+
+</RelativeLayout>

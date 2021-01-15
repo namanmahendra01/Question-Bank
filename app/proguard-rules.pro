@@ -19,6 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+#noinspection ShrinkerUnresolvedReference
+
 
 -keepclassmembers,allowobfuscation class * {
     @com.google.gson.annotations.SerializedName <fields>;
@@ -35,4 +37,9 @@
 -assumenosideeffects class android.util.Log {
 #    public static *** d(...);
     public static *** v(...);
+}
+-ignorewarnings
+-keep class com.shockwave.**
+-keepclassmembers class com.shockwave.** { *; }-keep class * {
+    public private *;
 }
