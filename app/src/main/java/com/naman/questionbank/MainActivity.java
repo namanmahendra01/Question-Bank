@@ -1,11 +1,14 @@
 package com.naman.questionbank;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 
 import android.os.Bundle;
 import android.view.Gravity;
 
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -40,25 +43,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CardView aktupaper, iscpaper, cbsepaper, advancepaper, jeepaper, ndapaper, neetpaper, cdspaper, gatepaper, iprepaper, imainpaper, cmainpaper, cprepaper;
     private DrawerLayout drawer;
     Button draw;
-    private TextView login,username;
+    private TextView login, username;
     private AdView adView;
+    MenuItem signIn;
+    boolean isSignedIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        login=findViewById(R.id.login);
-        username=findViewById(R.id.username);
+        login = findViewById(R.id.login);
+        username = findViewById(R.id.username);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
 
+        // get menu from navigationView
+        Menu menu = navigationView.getMenu();
 
-        if (FirebaseAuth.getInstance().getCurrentUser()==null){
+        // find MenuItem you want to change
+        signIn = menu.findItem(R.id.logout);
+
+
+        isSignedIn = FirebaseAuth.getInstance().getCurrentUser() != null;
+        if (!isSignedIn) {
             login.setVisibility(View.VISIBLE);
             username.setVisibility(View.GONE);
-        }else{
+            setText("Log in");
+        } else {
             login.setVisibility(View.GONE);
             username.setVisibility(View.VISIBLE);
+            setText("Log out");
             getUsername();
         }
 
@@ -73,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,profileActivity.class);
+                Intent i = new Intent(MainActivity.this, profileActivity.class);
                 startActivity(i);
             }
         });
@@ -87,12 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // Request an ad
         adView.loadAd();
 
-        Toolbar toolbar=findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView=findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ActionBarDrawerToggle toggle=new ActionBarDrawerToggle(this,drawer,toolbar,R.string.Open,R.string.Close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.Open, R.string.Close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
@@ -127,8 +142,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void setText(String log_out) {
+
+        // set new title to the MenuItem
+        signIn.setTitle(log_out);
+    }
+
     private void getUsername() {
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         db.child(getString(R.string.dbname_users))
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                 .child(getString(R.string.username))
@@ -158,6 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(i);
                 break;
+
             case R.id.isc:
                 i = new Intent(this, isc.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -228,13 +250,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private void signOut() {
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        FirebaseAuth.getInstance().signOut();
+        startActivity(intent);
+    }
+
     @Override
     public void onBackPressed() {
         drawer = findViewById(R.id.drawer_layout);
 
-        if(drawer.isDrawerOpen(GravityCompat.START)){
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }else{
+        } else {
             super.onBackPressed();
         }
 
@@ -243,12 +272,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         Intent i;
-        switch (menuItem.getItemId()){
-            case  R.id.profile:
-                i = new Intent(this, profileActivity.class);
-                i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(i);
-                break;
+        switch (menuItem.getItemId()) {
+            case R.id.profile:
+                if (isSignedIn) {
+                    i = new Intent(this, profileActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    startActivity(i);
+                    break;
+                } else {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("Login to Continue");
+                    builder.setMessage("You have to login to go on Profile page.");
+//                set buttons
+                    builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent c = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
+                            startActivity(c);
+
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.create().show();
+                    break;
+
+                }
+
             case R.id.fb:
 
                 i = new Intent(this, feedback.class);
@@ -267,38 +322,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 startActivity(i);
                 break;
+            case R.id.logout:
+
+                if (!menuItem.getTitle().equals("Log Out")) {
+                    Intent c = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
+                    startActivity(c);
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("Delete");
+                    builder.setMessage("Ae you sure you want to Log Out?");
+//                set buttons
+                    builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            signOut();
+
+                        }
+                    });
+                    builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
+                    builder.create().show();
+                }
+
+                break;
             case R.id.hp:
-            i = new Intent(this, help.class);
-            i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-            startActivity(i);
-            break;
+                i = new Intent(this, help.class);
+                i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(i);
+                break;
             case R.id.rate:
-              startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=PackageName")));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=PackageName")));
                 break;
             case R.id.share:
-                final String appPackageName=getApplicationContext().getPackageName();
-                String applink="";
-                try
-                {
-                    applink="https://play.google.com/store/apps/details?id="+appPackageName;
+                final String appPackageName = getApplicationContext().getPackageName();
+                String applink = "";
+                try {
+                    applink = "https://play.google.com/store/apps/details?id=" + appPackageName;
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    applink = "https://play.google.com/store/apps/details?id=" + appPackageName;
                 }
-                catch(android.content.ActivityNotFoundException anfe)
-            {
-                applink="https://play.google.com/store/apps/details?id="+appPackageName;
-            }
                 i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
-                String shareBody =applink;
+                String shareBody = applink;
                 String shareSub = "Your subject here";
-                i.putExtra(Intent.EXTRA_SUBJECT,shareSub);
-                i.putExtra(Intent.EXTRA_TEXT,shareBody);
+                i.putExtra(Intent.EXTRA_SUBJECT, shareSub);
+                i.putExtra(Intent.EXTRA_TEXT, shareBody);
                 i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                startActivity(Intent.createChooser(i,"Share using"));
+                startActivity(Intent.createChooser(i, "Share using"));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     @Override
     protected void onDestroy() {
         if (adView != null) {

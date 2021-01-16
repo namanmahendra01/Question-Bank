@@ -286,9 +286,6 @@ public class login extends AppCompatActivity {
         }
     }
 
-    @Override
-    public void onBackPressed() {
-        moveTaskToBack(true);
-    }
+
     //   ************************FIREBASE****************************
 }

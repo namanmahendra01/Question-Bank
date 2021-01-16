@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.R;
+import com.naman.questionbank.ViewResourecActivity;
 import com.naman.questionbank.models.Resource;
 
 import java.util.ArrayList;
@@ -66,6 +67,25 @@ public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
         holder.tag1.setText(tagsArray[0]);
         holder.tag2.setText(tagsArray[1]);
         holder.tag3.setText(tagsArray[2]);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(mContext, ViewResourecActivity.class);
+                i.putExtra("link",resource.getLk());
+                i.putExtra("ui",resource.getUi());
+                i.putExtra("ri",resource.getRi());
+                i.putExtra("t1",tagsArray[0]);
+                i.putExtra("t2",tagsArray[1]);
+                i.putExtra("t3",tagsArray[2]);
+                i.putExtra("tit",resource.getTtl());
+
+
+
+                mContext.startActivity(i);
+
+            }
+        });
 
 
 

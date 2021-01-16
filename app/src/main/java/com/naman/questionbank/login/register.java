@@ -341,6 +341,7 @@ public class register extends AppCompatActivity {
         HashMap<Object,String> hashMap= new HashMap<>();
         hashMap.put(getString(R.string.email),email);
         hashMap.put(getString(R.string.username),username);
+        hashMap.put(getString(R.string.visitors),"0");
 
 
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();

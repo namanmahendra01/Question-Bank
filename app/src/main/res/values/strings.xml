@@ -19,6 +19,9 @@
     <string name="field_tags">tg</string>
     <string name="field_link">lk</string>
     <string name="field_timestamp">tim</string>
+    <string name="visitors">v</string>
+
+
     <string-array name="semester">
         <item>Select Semester</item>
         <item>One</item>

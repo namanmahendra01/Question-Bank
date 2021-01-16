@@ -32,6 +32,7 @@ public class profileActivity extends AppCompatActivity {
     private RecyclerView resourceRv;
     ArrayList<Resource> resourceArrayList;
     private AdapterGrid adapterGrid;
+    int x=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,9 @@ public class profileActivity extends AppCompatActivity {
 
         getUsername();
         getVisitors();
-        getResource();
+        if (x==0) {
+            getResource();
+        }
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,10 +70,27 @@ public class profileActivity extends AppCompatActivity {
     }
 
     private void getVisitors() {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.child(getString(R.string.dbname_users))
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(getString(R.string.visitors))
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()){
+                            visitor.setText("visitors : "+snapshot.getValue().toString());
+                        }
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
 
     private void getResource() {
+        x++;
         resourceArrayList = new ArrayList<>();
         ArrayList<Resource> resourceArrayList1 = new ArrayList<>();
 
@@ -134,5 +154,19 @@ public class profileActivity extends AppCompatActivity {
                 });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        x++;
+            getResource();
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        x++;
+            getResource();
+
+    }
 }

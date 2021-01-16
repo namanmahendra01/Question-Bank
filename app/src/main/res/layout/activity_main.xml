@@ -42,10 +42,11 @@
                     android:layout_height="wrap_content"
                     android:text="Login"
                     android:id="@+id/login"
-                    android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:visibility="gone"
+                    android:padding="2dp"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="5dp"/>
                 <TextView
