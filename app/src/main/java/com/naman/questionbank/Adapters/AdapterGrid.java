@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.util.Log;
 import android.view.Display;
@@ -25,12 +26,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 import com.naman.questionbank.R;
 import com.naman.questionbank.ViewResourecActivity;
 import com.naman.questionbank.models.Resource;
+import com.naman.questionbank.profileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 
 public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
@@ -38,10 +43,13 @@ public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
 
     private Context mContext;
     private List<Resource> resourceList;
+    private  boolean fromShare;
+    private  int lastItem=-1 ;
 
-    public AdapterGrid(Context mContext, List<Resource> resourceList) {
+    public AdapterGrid(Context mContext, List<Resource> resourceList,boolean fromShare) {
         this.mContext = mContext;
         this.resourceList = resourceList;
+        this.fromShare=fromShare;
     }
 
 
@@ -71,18 +79,39 @@ public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(mContext, ViewResourecActivity.class);
-                i.putExtra("link",resource.getLk());
-                i.putExtra("ui",resource.getUi());
-                i.putExtra("ri",resource.getRi());
-                i.putExtra("t1",tagsArray[0]);
-                i.putExtra("t2",tagsArray[1]);
-                i.putExtra("t3",tagsArray[2]);
-                i.putExtra("tit",resource.getTtl());
+                if (fromShare){
+                    if (lastItem!=i) {
+                        lastItem = i;
+                        holder.image.setBackgroundColor(mContext.getResources().getColor(R.color.transparentBlue));
+                        SharedPreferences sp = mContext.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sp.edit();
+                        editor.putString("ri",resource.getRi());
+                        editor.putString("ui",resource.getUi());
+                        editor.apply();
+                    }else{
+                        lastItem = -1;
+                        SharedPreferences sp = mContext.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sp.edit();
+                        editor.putString("ri",null);
+                        editor.putString("ui",null);
+                        editor.apply();
+                        holder.image.setBackgroundColor(mContext.getResources().getColor(R.color.white));
 
+                    }
 
+                }else {
+                    Log.d(TAG, "onBindViewHolder: "+fromShare);
 
-                mContext.startActivity(i);
+                    Intent i = new Intent(mContext, ViewResourecActivity.class);
+                    i.putExtra("link", resource.getLk());
+                    i.putExtra("ui", resource.getUi());
+                    i.putExtra("ri", resource.getRi());
+                    i.putExtra("t1", tagsArray[0]);
+                    i.putExtra("t2", tagsArray[1]);
+                    i.putExtra("t3", tagsArray[2]);
+                    i.putExtra("tit", resource.getTtl());
+                    mContext.startActivity(i);
+                }
 
             }
         });

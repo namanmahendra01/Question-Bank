@@ -18,14 +18,20 @@
     android:layout_below="@+id/sb"
         tools:listitem="@layout/forum_item"
     android:layout_height="wrap_content"
-    android:id="@+id/Rv"
+    android:id="@+id/ForumRv"
     />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_add"
+        android:elevation="6dp"
+        app:backgroundTint="@color/black"
+        app:fabSize="normal"
+        android:layout_margin="16dp"
+        android:id="@+id/float_btn"
         android:layout_alignParentEnd="true"
-        android:id="@+id/ask"
-        android:layout_margin="20dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end|bottom"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

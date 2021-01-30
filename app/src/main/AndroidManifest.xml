@@ -13,11 +13,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".ViewResourecActivity"
-            android:theme="@style/Theme.Transparent"
-            />
-        <activity android:name=".AddResourceActivity" />
-        <activity android:name=".profileActivity" />
+        <activity android:name=".discussionActivity"></activity>
+        <activity
+            android:name=".Forum.AskQuestionActivity"
+            android:noHistory="true" />
+        <activity android:name=".Forum.forumActivity" />
+        <activity
+            android:name=".ViewResourecActivity"
+            android:noHistory="true"
+            android:theme="@style/Theme.Transparent" />
+        <activity
+            android:name=".AddResourceActivity"
+            android:noHistory="true" />
+        <activity
+            android:name=".profileActivity"
+            android:noHistory="true" />
         <activity
             android:name=".help"
             android:alwaysRetainTaskState="true"
@@ -104,10 +114,10 @@
             </intent-filter>
         </activity>
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>

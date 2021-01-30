@@ -45,6 +45,12 @@
 
 
 </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/info"
+
+        android:id="@+id/btnRl">
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -52,11 +58,23 @@
         android:text="Add Resource+"
         android:padding="10dp"
         android:textColor="@color/white"
-        android:layout_below="@+id/info"
+        android:layout_below="@+id/selectText"
         android:textSize="15sp"
         android:id="@+id/add"
         android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Resource to share"
+        android:id="@+id/selectText"
+        android:textSize="28sp"
+        android:visibility="gone"
+        android:layout_margin="20dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/deeppurple"/>
 
+    </RelativeLayout>
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -65,5 +83,5 @@
     tools:listitem="@layout/resource_item"
     app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
     app:spanCount="3"
-    android:layout_below="@+id/add"/>
+    android:layout_below="@+id/btnRl"/>
 </RelativeLayout>

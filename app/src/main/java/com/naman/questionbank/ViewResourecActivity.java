@@ -26,7 +26,8 @@ public class ViewResourecActivity extends AppCompatActivity {
     private Button open,copy;
     private ImageView del;
     private TextView tag1,tag2,tag3,title,linkTv;
-    private String ri;
+    private String ri,t1,t2,t3,visitor;
+    String userId;
 
 
 
@@ -48,12 +49,23 @@ public class ViewResourecActivity extends AppCompatActivity {
 
         Intent i=getIntent();
         String link=i.getStringExtra("link");
-        String userId=i.getStringExtra("ui");
+         userId=i.getStringExtra("ui");
          ri=i.getStringExtra("ri");
-        String t1=i.getStringExtra("t1");
-        String t2=i.getStringExtra("t2");
-        String t3=i.getStringExtra("t3");
+         t1=i.getStringExtra("t1");
+         t2=i.getStringExtra("t2");
+        t3=i.getStringExtra("t3");
+
         String ttl=i.getStringExtra("tit");
+        try {
+
+            if (!userId.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                del.setVisibility(View.GONE);
+
+            }
+        }catch (NullPointerException e){
+            userId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        }
+
 
         tag1.setText(t1);
         tag2.setText(t2);
@@ -131,15 +143,45 @@ public class ViewResourecActivity extends AppCompatActivity {
     private void deleteResource() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         reference.child(getString(R.string.dbname_Resource))
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(userId)
                 .child(ri)
                 .removeValue()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Toast.makeText(ViewResourecActivity.this, "Resource Deleted!", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(ViewResourecActivity.this, profileActivity.class);
-                        startActivity(i);
+                        reference.child(getString(R.string.dbname_ResourceTags))
+                                .child(t1)
+                                .child(ri)
+                                .removeValue()
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        reference.child(getString(R.string.dbname_ResourceTags))
+                                                .child(t2)
+                                                .child(ri)
+                                                .removeValue()
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        reference.child(getString(R.string.dbname_ResourceTags))
+                                                                .child(t3)
+                                                                .child(ri)
+                                                                .removeValue()
+                                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                                    @Override
+                                                                    public void onSuccess(Void aVoid) {
+
+                                                                            Toast.makeText(ViewResourecActivity.this, "Resource Deleted!", Toast.LENGTH_SHORT).show();
+                                                                            Intent i = new Intent(ViewResourecActivity.this, profileActivity.class);
+                                                                            startActivity(i);
+
+                                                                    }
+                                                                });
+                                                    }
+                                                });
+                                    }
+                                });
+
                     }
                 });
     }

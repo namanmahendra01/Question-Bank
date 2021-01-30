@@ -84,6 +84,7 @@
                         android:text="Enter Forum"
                         android:padding="5dp"
 
+                        android:id="@+id/enterForum"
                         android:textColor="#000000"
                         />
                 </androidx.cardview.widget.CardView>

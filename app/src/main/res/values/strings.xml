@@ -20,6 +20,15 @@
     <string name="field_link">lk</string>
     <string name="field_timestamp">tim</string>
     <string name="visitors">v</string>
+    <string name="dbname_ResourceTags">ResourceTags</string>
+    <string name="field_question_id">qi</string>
+    <string name="field_question">que</string>
+    <string name="field_views">v</string>
+    <string name="dbname_Questions">Questions</string>
+    <string name="dbname_ResourceBasedQuestions">ResourceBasedQuestions</string>
+    <string name="dbname_QuestionTags">QuestionTags</string>
+    <string name="dbname_ResourceBasedQuestionsTags">ResourceBasedQuestionsTags</string>
+    <string name="dbname_Discussion">Discussion</string>
 
 
     <string-array name="semester">

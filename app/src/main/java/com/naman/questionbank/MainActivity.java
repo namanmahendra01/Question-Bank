@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 
 import android.os.Bundle;
-import android.view.Gravity;
+import android.util.Log;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -33,17 +33,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.naman.questionbank.login.login;
-
-import static android.view.Gravity.START;
+import com.naman.questionbank.Forum.forumActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
+    private static final String TAG = "Main";
     private CardView aktupaper, iscpaper, cbsepaper, advancepaper, jeepaper, ndapaper, neetpaper, cdspaper, gatepaper, iprepaper, imainpaper, cmainpaper, cprepaper;
     private DrawerLayout drawer;
     Button draw;
-    private TextView login, username;
+    private TextView login, username,enterForum;
     private AdView adView;
     MenuItem signIn;
     boolean isSignedIn;
@@ -55,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         login = findViewById(R.id.login);
         username = findViewById(R.id.username);
+        enterForum = findViewById(R.id.enterForum);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -89,6 +90,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        enterForum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, forumActivity.class);
+                startActivity(i);
+            }
+        });
         username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -323,16 +331,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             case R.id.logout:
+                Log.d(TAG, "onNavigationItemSelected: "+menuItem.getTitle());
 
-                if (!menuItem.getTitle().equals("Log Out")) {
+                if (!menuItem.getTitle().equals("Log out")) {
                     Intent c = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
                     startActivity(c);
                 } else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Delete");
+                    builder.setTitle("Log Out");
                     builder.setMessage("Ae you sure you want to Log Out?");
 //                set buttons
-                    builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                    builder.setPositiveButton("Log Out", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             signOut();

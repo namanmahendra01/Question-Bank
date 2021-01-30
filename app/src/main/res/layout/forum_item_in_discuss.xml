@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="When will AKTU exam starts?"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textColor="@color/black"
                 android:fontFamily="sans-serif-smallcaps"
                 android:padding="5dp"

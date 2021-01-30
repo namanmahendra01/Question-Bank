@@ -6,13 +6,20 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -21,17 +28,27 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.Adapters.AdapterGrid;
 import com.naman.questionbank.login.login;
+import com.naman.questionbank.models.Comment;
 import com.naman.questionbank.models.Resource;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 public class profileActivity extends AppCompatActivity {
     private static final String TAG = "profile";
-    private TextView username, visitor, res;
+    private TextView username, visitor, res,selectTv;
     private Button add;
+    private RelativeLayout upper;
     private RecyclerView resourceRv;
     ArrayList<Resource> resourceArrayList;
+    String userId="";
     private AdapterGrid adapterGrid;
+    boolean ifFromShare=false;
+    String fromShare=" ",quesId,anotherPerson ;
+
     int x=0;
 
     @Override
@@ -44,6 +61,29 @@ public class profileActivity extends AppCompatActivity {
         res = findViewById(R.id.res);
         add = findViewById(R.id.add);
         resourceRv = findViewById(R.id.Rv);
+        upper = findViewById(R.id.info);
+        selectTv = findViewById(R.id.selectText);
+
+        Intent j = getIntent();
+        userId=j.getStringExtra("ui");
+        if (userId==null){
+            userId=FirebaseAuth.getInstance().getCurrentUser().getUid();
+        }else{
+            if (!userId.equals(FirebaseAuth.getInstance().getCurrentUser().getUid()))
+            add.setVisibility(View.GONE);
+        }
+
+        fromShare=j.getStringExtra("toShare");
+        quesId=j.getStringExtra("qi");
+        if (fromShare!=null) {
+            if (fromShare.equals("true")) {
+                ifFromShare = true;
+                upper.setVisibility(View.GONE);
+                selectTv.setVisibility(View.VISIBLE);
+                add.setText("Share");
+
+            }
+        }
 
         getUsername();
         getVisitors();
@@ -54,8 +94,42 @@ public class profileActivity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(profileActivity.this,AddResourceActivity.class);
-                startActivity(i);
+                Log.d(TAG, "onClick: ss");
+                if (fromShare==null) {
+                        Intent i = new Intent(profileActivity.this, AddResourceActivity.class);
+                        startActivity(i);
+                }else{
+                    Log.d(TAG, "onClick: ss2");
+
+
+                    SharedPreferences sp = profileActivity.this.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+                    String ui =sp.getString("ui",null);
+                    String ri =sp.getString("ri",null);
+                    if (ui==null){
+                        Toast.makeText(profileActivity.this, "Nothing is selected", Toast.LENGTH_SHORT).show();
+                    }else{
+                        AlertDialog.Builder builder = new AlertDialog.Builder(profileActivity.this);
+                        builder.setTitle("Share");
+                        builder.setMessage("Share selected Resource?");
+//                set buttons
+                        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                addNewComment(ui+",&&,"+ri);
+
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                        builder.create().show();
+                    }
+
+                }
             }
         });
 
@@ -68,11 +142,34 @@ public class profileActivity extends AppCompatActivity {
 
 
     }
+    private void addNewComment(String newComment) {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+        String commentID = myRef.push().getKey();
+        Comment comment = new Comment();
+        comment.setC(newComment);
+        comment.setTim(getTim());
+        comment.setUi(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        myRef.child(getString(R.string.dbname_Discussion))
+                .child(quesId)
+                .child(commentID)
+                .setValue(comment)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                    }
+                });
 
+    }
+    private String getTim() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.ENGLISH);
+        sdf.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
+        return sdf.format(new Date());
+    }
     private void getVisitors() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         reference.child(getString(R.string.dbname_users))
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(userId)
                 .child(getString(R.string.visitors))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -97,7 +194,7 @@ public class profileActivity extends AppCompatActivity {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         reference.child(getString(R.string.dbname_Resource))
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(userId)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -119,7 +216,7 @@ public class profileActivity extends AppCompatActivity {
                             resourceRv.setLayoutManager(linearLayoutManager);
 
 
-                            adapterGrid = new AdapterGrid(profileActivity.this, resourceArrayList);
+                            adapterGrid = new AdapterGrid(profileActivity.this, resourceArrayList,ifFromShare);
                             adapterGrid.setHasStableIds(true);
                             resourceRv.setAdapter(adapterGrid);
 
@@ -139,7 +236,7 @@ public class profileActivity extends AppCompatActivity {
     private void getUsername() {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         db.child(getString(R.string.dbname_users))
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .child(userId)
                 .child(getString(R.string.username))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -157,16 +254,24 @@ public class profileActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        x++;
+        Log.d(TAG, "onResume: 11"+x);
+        if(x==0){
+            x++;
             getResource();
+        }
 
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        x++;
+        Log.d(TAG, "onResume: 12" +x);
+
+        if(x==0){
+            x++;
             getResource();
+        }
+
 
     }
 }
