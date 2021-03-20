@@ -68,7 +68,9 @@ public class discussionActivity extends AppCompatActivity {
         ques.setText(i.getStringExtra("ques"));
         username.setText(i.getStringExtra("username"));
         quesId=i.getStringExtra("qi");
+        userId=i.getStringExtra("ui");
         Log.d(TAG, "onCreate: "+quesId);
+
 
         commentRv = findViewById(R.id.recyclerComment);
         commentRv.setHasFixedSize(true);
@@ -87,6 +89,9 @@ public class discussionActivity extends AppCompatActivity {
         commentRv.setAdapter(adapterComment);
 
         getComments(quesId, userId);
+        if (!FirebaseAuth.getInstance().getCurrentUser().getUid().equals(userId)) {
+            increaseViews();
+        }
 
         ImageView mCheckMark = findViewById(R.id.checkMark);
         mCheckMark.setOnClickListener(v -> {
@@ -114,6 +119,17 @@ public class discussionActivity extends AppCompatActivity {
         });
 
 
+
+    }
+
+    private void increaseViews() {
+        int x=Integer.parseInt(views.getText().toString());
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+        db.child(getString(R.string.dbname_Questions))
+                .child(userId)
+                .child(quesId)
+                .child(getString(R.string.field_views))
+                .setValue(String.valueOf(x+1));
 
     }
 

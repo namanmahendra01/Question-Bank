@@ -156,6 +156,11 @@ public class profileActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
+                        SharedPreferences sp = profileActivity.this.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sp.edit();
+                        editor.putString("ri",null);
+                        editor.putString("ui",null);
+                        editor.apply();
                         finish();
                     }
                 });

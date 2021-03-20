@@ -3,11 +3,15 @@ package com.naman.questionbank.Forum;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -16,10 +20,13 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.Adapters.AdaperForum;
+import com.naman.questionbank.Adapters.AdapterSearchedQuestion;
 import com.naman.questionbank.R;
 import com.naman.questionbank.ViewResourecActivity;
+import com.naman.questionbank.discussionActivity;
 import com.naman.questionbank.models.Question;
 import com.naman.questionbank.profileActivity;
 
@@ -32,6 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class forumFragment extends Fragment {
     private static final String TAG = "mediafragment";
@@ -42,6 +50,13 @@ public class forumFragment extends Fragment {
     private int mResults;
     private AdaperForum forumAdapter;
     private RecyclerView forumRv;
+    private EditText searchEditText;
+    private ImageView searchImage;
+    private ImageView crossImage;
+    private ListView searchListView;
+    private AdapterSearchedQuestion mAdapter;
+
+    private List<Question> searchedQuestion;
     public forumFragment() {
     }
 
@@ -52,6 +67,14 @@ public class forumFragment extends Fragment {
         View view = inflater.inflate(R.layout.forum_fragment, container, false);
         askBtn=view.findViewById(R.id.float_btn);
         forumRv=view.findViewById(R.id.ForumRv);
+
+        searchEditText=view.findViewById(R.id.search);
+        searchImage=view.findViewById(R.id.searchicon);
+        crossImage=view.findViewById(R.id.cross);
+        searchListView=view.findViewById(R.id.searchListView);
+
+
+
 
 
         forumRv.setHasFixedSize(true);
@@ -88,10 +111,18 @@ public class forumFragment extends Fragment {
             }
         });
 
+        crossImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchEditText.setText("");
+                searchedQuestion.clear();
+                if (mAdapter != null) mAdapter.notifyDataSetChanged();
+            }
+        });
 
         getQuestion();
 
-
+        initTextListener();
 
         return view;
     }
@@ -216,6 +247,83 @@ public class forumFragment extends Fragment {
             Log.e(TAG, "index out of bound" + e.getMessage());
 
         }
+
+    }
+    private void initTextListener() {
+        searchedQuestion = new ArrayList<>();
+        searchEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String text = searchEditText.getText().toString();
+                searchForMatch(text);
+            }
+        });
+    }
+
+    private void searchForMatch(String keyword) {
+        Log.d(TAG, "searching for a match" + keyword);
+        searchedQuestion.clear();
+        if (keyword.length() == 0) {
+            crossImage.setVisibility(View.GONE);
+
+        } else {
+            crossImage.setVisibility(View.VISIBLE);
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            Query query = reference.child(getString(R.string.dbname_QuestionTags)).orderByKey()
+                    .startAt(keyword).endAt(keyword + "\uf8ff");
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        for (DataSnapshot singleSnapshot : dataSnapshot1.getChildren()) {
+
+                            Log.d(TAG, "onDataChange: g " + singleSnapshot.getKey());
+                            reference.child(getString(R.string.dbname_Questions))
+                                    .child(singleSnapshot.getValue().toString())
+
+                                    .child(singleSnapshot.getKey())
+                                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                            Log.d(TAG, "onDataChange: g1 " + snapshot.getValue());
+                                            if (!searchedQuestion.contains(snapshot.getValue(Question.class)))
+                                            searchedQuestion.add(snapshot.getValue(Question.class));
+                                            updateUserList();
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+    }
+
+    private void updateUserList() {
+        Log.d(TAG, "updateUserList: "+searchedQuestion);
+        mAdapter = new AdapterSearchedQuestion(getContext(), R.layout.forum_item, searchedQuestion);
+        searchListView.setAdapter(mAdapter);
+
+
 
     }
 }

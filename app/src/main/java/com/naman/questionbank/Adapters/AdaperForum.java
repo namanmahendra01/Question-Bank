@@ -84,6 +84,8 @@ public class AdaperForum extends RecyclerView.Adapter<AdaperForum.ViewHolder> {
                 i.putExtra("ques",holder.ques.getText());
                 i.putExtra("username",holder.username.getText());
                 i.putExtra("qi",question.getQi());
+                i.putExtra("ui",question.getUi());
+
                 mContext.startActivity(i);
 
             }

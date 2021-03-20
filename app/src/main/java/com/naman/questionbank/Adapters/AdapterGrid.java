@@ -44,7 +44,8 @@ public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
     private Context mContext;
     private List<Resource> resourceList;
     private  boolean fromShare;
-    private  int lastItem=-1 ;
+    private  long lastItem=12 ;
+    private boolean ifSelected;
 
     public AdapterGrid(Context mContext, List<Resource> resourceList,boolean fromShare) {
         this.mContext = mContext;
@@ -80,16 +81,23 @@ public class AdapterGrid extends RecyclerView.Adapter<AdapterGrid.ViewHolder> {
             @Override
             public void onClick(View view) {
                 if (fromShare){
-                    if (lastItem!=i) {
-                        lastItem = i;
-                        holder.image.setBackgroundColor(mContext.getResources().getColor(R.color.transparentBlue));
-                        SharedPreferences sp = mContext.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor=sp.edit();
-                        editor.putString("ri",resource.getRi());
-                        editor.putString("ui",resource.getUi());
-                        editor.apply();
+                    Log.d(TAG, "onClick: jkj"+holder.getItemId());
+
+                    if (lastItem!=(holder.getItemId())) {
+                        if(!ifSelected){
+                            ifSelected=true;
+                            lastItem = holder.getItemId();
+                            holder.image.setBackgroundColor(mContext.getResources().getColor(R.color.transparentBlue));
+                            SharedPreferences sp = mContext.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor=sp.edit();
+                            editor.putString("ri",resource.getRi());
+                            editor.putString("ui",resource.getUi());
+                            editor.apply();
+                        }
+
                     }else{
                         lastItem = -1;
+                        ifSelected=false;
                         SharedPreferences sp = mContext.getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor=sp.edit();
                         editor.putString("ri",null);

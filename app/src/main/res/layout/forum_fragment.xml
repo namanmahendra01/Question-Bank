@@ -12,10 +12,24 @@
         android:layout_height="wrap_content">
 <include layout="@layout/snippet_searchbar"/>
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/sb"
+        android:id="@+id/searchRv"
+        android:background="@color/deeppurple"
+
+        android:layout_height="wrap_content">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/searchListView"
+        />
+    </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-    android:layout_below="@+id/sb"
+    android:layout_below="@+id/searchRv"
         tools:listitem="@layout/forum_item"
     android:layout_height="wrap_content"
     android:id="@+id/ForumRv"
