@@ -18,9 +18,9 @@
                 android:layout_height="wrap_content"
                 android:background="@color/black"
                 app:tabTextColor="@color/white"
-                app:tabSelectedTextColor="#f29492"
+                app:tabSelectedTextColor="@color/deeppurple"
 
-                app:tabIndicatorColor="#E3706E">
+                app:tabIndicatorColor="@color/deeppurple">
 
 
             </com.google.android.material.tabs.TabLayout>

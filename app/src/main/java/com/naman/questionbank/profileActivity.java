@@ -33,6 +33,7 @@ import com.naman.questionbank.models.Resource;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -211,6 +212,7 @@ public class profileActivity extends AppCompatActivity {
                                 resourceArrayList1.add(resource);
                             }
                             resourceArrayList.addAll(resourceArrayList1);
+                            Collections.reverse(resourceArrayList);
 
                             resourceRv.setHasFixedSize(true);
                             GridLayoutManager linearLayoutManager = new GridLayoutManager(profileActivity.this, 3);

@@ -93,8 +93,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         enterForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, forumActivity.class);
-                startActivity(i);
+                if(isSignedIn) {
+                    Intent i = new Intent(MainActivity.this, forumActivity.class);
+                    startActivity(i);
+                }else{
+                    showDialogueForLogin("You have to login to enter into forum.");
+                }
             }
         });
         username.setOnClickListener(new View.OnClickListener() {
@@ -148,6 +152,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gatepaper.setOnClickListener(this);
 
 
+    }
+
+    private void showDialogueForLogin(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Login to Continue");
+        builder.setMessage(message);
+//                set buttons
+        builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent c = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
+                startActivity(c);
+
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
     }
 
     private void setText(String log_out) {
@@ -289,25 +315,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     break;
                 } else {
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                    builder.setTitle("Login to Continue");
-                    builder.setMessage("You have to login to go on Profile page.");
-//                set buttons
-                    builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Intent c = new Intent(MainActivity.this, com.naman.questionbank.login.login.class);
-                            startActivity(c);
-
-                        }
-                    });
-                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    });
-                    builder.create().show();
+                   showDialogueForLogin("You have to login to go on Profile page.");
                     break;
 
                 }
@@ -387,6 +395,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
     @Override
     protected void onDestroy() {

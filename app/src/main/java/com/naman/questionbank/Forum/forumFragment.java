@@ -23,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.Adapters.AdaperForum;
+import com.naman.questionbank.Adapters.AdapterSearchQuestion;
 import com.naman.questionbank.Adapters.AdapterSearchedQuestion;
 import com.naman.questionbank.R;
 import com.naman.questionbank.ViewResourecActivity;
@@ -53,8 +54,8 @@ public class forumFragment extends Fragment {
     private EditText searchEditText;
     private ImageView searchImage;
     private ImageView crossImage;
-    private ListView searchListView;
-    private AdapterSearchedQuestion mAdapter;
+    private RecyclerView searchListView;
+    private AdapterSearchQuestion mAdapter;
 
     private List<Question> searchedQuestion;
     public forumFragment() {
@@ -75,16 +76,28 @@ public class forumFragment extends Fragment {
 
 
 
-
+        searchListView.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        searchListView.setItemViewCacheSize(10);
+        searchListView.setDrawingCacheEnabled(true);
+        searchListView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
+        linearLayoutManager.setItemPrefetchEnabled(true);
+        linearLayoutManager.setInitialPrefetchItemCount(20);
+        searchListView.setLayoutManager(linearLayoutManager);
 
         forumRv.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext());
         forumRv.setItemViewCacheSize(10);
         forumRv.setDrawingCacheEnabled(true);
         forumRv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
-        linearLayoutManager.setItemPrefetchEnabled(true);
-        linearLayoutManager.setInitialPrefetchItemCount(20);
-        forumRv.setLayoutManager(linearLayoutManager);
+        linearLayoutManager1.setItemPrefetchEnabled(true);
+        linearLayoutManager1.setInitialPrefetchItemCount(20);
+        forumRv.setLayoutManager(linearLayoutManager1);
+
+        searchedQuestion=new ArrayList<>();
+        mAdapter = new AdapterSearchQuestion(getContext(), searchedQuestion);
+        mAdapter.setHasStableIds(true);
+        searchListView.setAdapter(mAdapter);
 
         questionArrayList = new ArrayList<>();
 
@@ -320,8 +333,11 @@ public class forumFragment extends Fragment {
 
     private void updateUserList() {
         Log.d(TAG, "updateUserList: "+searchedQuestion);
-        mAdapter = new AdapterSearchedQuestion(getContext(), R.layout.forum_item, searchedQuestion);
+        Collections.reverse(searchedQuestion);
+        mAdapter = new AdapterSearchQuestion(getContext(), searchedQuestion);
+        mAdapter.setHasStableIds(true);
         searchListView.setAdapter(mAdapter);
+        mAdapter.notifyDataSetChanged();
 
 
 

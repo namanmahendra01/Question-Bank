@@ -58,6 +58,7 @@ public class AskQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 progressBar.setVisibility(View.VISIBLE);
+                addBtn.setEnabled(false);
                 checkFields();
             }
         });
@@ -66,6 +67,8 @@ public class AskQuestionActivity extends AppCompatActivity {
     private void checkFields() {
         if (quesET.getText().equals("") || t1.getText().equals("") || t2.getText().equals("") || t3.getText().equals("")) {
             progressBar.setVisibility(View.GONE);
+            addBtn.setEnabled(true);
+
 
             Toast.makeText(this, "Please complete All the fields", Toast.LENGTH_SHORT).show();
         } else {
@@ -79,14 +82,17 @@ public class AskQuestionActivity extends AppCompatActivity {
         tag3 = t3.getText().toString().toLowerCase();
         if (tag1.length() > 20) {
             progressBar.setVisibility(View.GONE);
+            addBtn.setEnabled(true);
 
             t1.setError("tag size must be less than or equal to 20 characters");
         } else if (tag2.length() > 20) {
             progressBar.setVisibility(View.GONE);
+            addBtn.setEnabled(true);
 
             t2.setError("tag size must be less than or equal to 20 characters");
         } else if (tag3.length() > 20) {
             progressBar.setVisibility(View.GONE);
+            addBtn.setEnabled(true);
 
             t3.setError("tag size must be less than or equal to 20 characters");
         } else {

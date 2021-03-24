@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class ViewResourecActivity extends AppCompatActivity {
     private Button open,copy;
-    private ImageView del;
+    private ImageView del,cross;
     private TextView tag1,tag2,tag3,title,linkTv;
     private String ri,t1,t2,t3,visitor;
     String userId;
@@ -46,6 +46,8 @@ public class ViewResourecActivity extends AppCompatActivity {
         tag3= findViewById(R.id.tag3);
         title= findViewById(R.id.title);
         linkTv= findViewById(R.id.link);
+
+        cross= findViewById(R.id.cross);
 
         Intent i=getIntent();
         String link=i.getStringExtra("link");
@@ -77,6 +79,12 @@ public class ViewResourecActivity extends AppCompatActivity {
 
 
 
+        cross.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         open.setOnClickListener(new View.OnClickListener() {
             @Override

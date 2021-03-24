@@ -27,6 +27,7 @@ import com.naman.questionbank.models.Comment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -75,6 +76,7 @@ public class discussionActivity extends AppCompatActivity {
         commentRv = findViewById(R.id.recyclerComment);
         commentRv.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setReverseLayout(true);
         commentRv.setItemViewCacheSize(9);
         commentRv.setDrawingCacheEnabled(true);
         commentRv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
@@ -160,6 +162,8 @@ public class discussionActivity extends AppCompatActivity {
                 .child(commentID)
                 .setValue(comment);
 
+        commentRv.smoothScrollToPosition(commentRv.getAdapter().getItemCount() - 1);
+
     }
     private void getComments(String photoId, String userId) {
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
@@ -173,6 +177,7 @@ public class discussionActivity extends AppCompatActivity {
                             Comment comment = snapshot1.getValue(Comment.class);
                             comments.add(comment);
                             commentID.add(snapshot1.getKey());
+
                         }
                         adapterComment.notifyDataSetChanged();
                     }
