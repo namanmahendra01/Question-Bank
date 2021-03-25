@@ -25,6 +25,7 @@
                 android:layout_height="50dp"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
+                android:visibility="gone"
                 android:background="@color/white"
                 android:src="@drawable/ic_eclipse" />
 

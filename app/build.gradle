@@ -11,23 +11,23 @@ android {
         applicationId "com.naman.questionbank"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 6
-        versionName "3.2"
+        versionCode 7
+        versionName "4.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-                debug {
-            shrinkResources false
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-//        release {
-//            shrinkResources true
-//            minifyEnabled true
+//                debug {
+//            shrinkResources false
+//            minifyEnabled false
 //            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //        }
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

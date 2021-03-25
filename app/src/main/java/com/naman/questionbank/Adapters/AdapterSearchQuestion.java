@@ -89,6 +89,12 @@ public class AdapterSearchQuestion extends RecyclerView.Adapter<AdapterSearchQue
             }
         });
 
+        holder.username.setOnClickListener(v -> {
+            Intent i1 = new Intent(mContext, profileActivity.class);
+            i1.putExtra("visitor", "true");
+            i1.putExtra("ui", question.get(position).getUi());
+            mContext.startActivity(i1);
+        });
 
     }
 

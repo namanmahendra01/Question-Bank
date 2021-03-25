@@ -76,12 +76,6 @@ public class discussionActivity extends AppCompatActivity {
         commentRv = findViewById(R.id.recyclerComment);
         commentRv.setHasFixedSize(true);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setReverseLayout(true);
-        commentRv.setItemViewCacheSize(9);
-        commentRv.setDrawingCacheEnabled(true);
-        commentRv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
-        linearLayoutManager.setItemPrefetchEnabled(true);
-        linearLayoutManager.setInitialPrefetchItemCount(20);
         commentRv.setLayoutManager(linearLayoutManager);
 
         comments = new ArrayList<>();
@@ -101,7 +95,7 @@ public class discussionActivity extends AppCompatActivity {
                 addNewComment(mComment.getText().toString());
                 mComment.setText("");
                 closeKeyboard();
-            } else Toast.makeText(discussionActivity.this, "C'mon..Give a Shoutout", Toast.LENGTH_SHORT).show();
+            } else Toast.makeText(discussionActivity.this, "please enter something", Toast.LENGTH_SHORT).show();
 
         });
 
@@ -162,7 +156,9 @@ public class discussionActivity extends AppCompatActivity {
                 .child(commentID)
                 .setValue(comment);
 
-        commentRv.smoothScrollToPosition(commentRv.getAdapter().getItemCount() - 1);
+        if (commentRv.getAdapter().getItemCount()!=0) {
+            commentRv.smoothScrollToPosition(commentRv.getAdapter().getItemCount());
+        }
 
     }
     private void getComments(String photoId, String userId) {

@@ -15,10 +15,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -48,7 +52,8 @@ public class profileActivity extends AppCompatActivity {
     String userId="";
     private AdapterGrid adapterGrid;
     boolean ifFromShare=false;
-    String fromShare=" ",quesId,anotherPerson ;
+    String fromShare=" ",quesId ;
+    private AdView adView;
 
     int x=0;
 
@@ -74,6 +79,16 @@ public class profileActivity extends AppCompatActivity {
             add.setVisibility(View.GONE);
         }
 
+        AudienceNetworkAds.initialize(this);
+        adView = new AdView(this, getString(R.string.placement_Id), AdSize.BANNER_HEIGHT_50);
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) findViewById(R.id.banner_container);
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        // Request an ad
+
+        adView.loadAd();
+
         fromShare=j.getStringExtra("toShare");
         quesId=j.getStringExtra("qi");
         if (fromShare!=null) {
@@ -85,6 +100,7 @@ public class profileActivity extends AppCompatActivity {
 
             }
         }
+
 
         getUsername();
         getVisitors();
@@ -182,6 +198,9 @@ public class profileActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.exists()){
                             visitor.setText("visitors : "+snapshot.getValue().toString());
+                            if (!userId.equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                                addVisitor(snapshot.getValue().toString());
+                            }
                         }
                     }
 
@@ -190,6 +209,18 @@ public class profileActivity extends AppCompatActivity {
 
                     }
                 });
+    }
+
+    private void addVisitor(String toString) {
+        int x=Integer.parseInt(toString);
+        int finalViews=x+1;
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+
+        myRef.child(getString(R.string.dbname_users))
+                .child(userId)
+                .child(getString(R.string.field_views))
+                .setValue(String.valueOf(finalViews));
+
     }
 
     private void getResource() {
@@ -280,5 +311,15 @@ public class profileActivity extends AppCompatActivity {
         }
 
 
+    }
+    @Override
+    protected void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+//        if (interstitialAd != null) {
+//            interstitialAd.destroy();
+//        }
+        super.onDestroy();
     }
 }

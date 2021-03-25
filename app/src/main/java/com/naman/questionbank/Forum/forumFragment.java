@@ -11,9 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -36,6 +40,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -57,6 +62,7 @@ public class forumFragment extends Fragment {
     private RecyclerView searchListView;
     private AdapterSearchQuestion mAdapter;
 
+    private AdView adView;
     private List<Question> searchedQuestion;
     public forumFragment() {
     }
@@ -89,7 +95,6 @@ public class forumFragment extends Fragment {
         LinearLayoutManager linearLayoutManager1 = new LinearLayoutManager(getContext());
         forumRv.setItemViewCacheSize(10);
         forumRv.setDrawingCacheEnabled(true);
-        forumRv.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_LOW);
         linearLayoutManager1.setItemPrefetchEnabled(true);
         linearLayoutManager1.setInitialPrefetchItemCount(20);
         forumRv.setLayoutManager(linearLayoutManager1);
@@ -102,7 +107,14 @@ public class forumFragment extends Fragment {
         questionArrayList = new ArrayList<>();
 
 
-
+        AudienceNetworkAds.initialize(getContext());
+        adView = new AdView(getContext(), getString(R.string.placement_Id), AdSize.BANNER_HEIGHT_50);
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) view.findViewById(R.id.banner_container);
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        // Request an ad
+        adView.loadAd();
         forumRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -341,5 +353,15 @@ public class forumFragment extends Fragment {
 
 
 
+    }
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+//        if (interstitialAd != null) {
+//            interstitialAd.destroy();
+//        }
+        super.onDestroy();
     }
 }

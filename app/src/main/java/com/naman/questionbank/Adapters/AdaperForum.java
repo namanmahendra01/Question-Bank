@@ -31,6 +31,7 @@ import com.naman.questionbank.ViewResourecActivity;
 import com.naman.questionbank.discussionActivity;
 import com.naman.questionbank.models.Question;
 import com.naman.questionbank.models.Resource;
+import com.naman.questionbank.profileActivity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -90,7 +91,12 @@ public class AdaperForum extends RecyclerView.Adapter<AdaperForum.ViewHolder> {
 
             }
         });
-
+        holder.username.setOnClickListener(v -> {
+            Intent i1 = new Intent(mContext, profileActivity.class);
+            i1.putExtra("visitor", "true");
+            i1.putExtra("ui", question.getUi());
+            mContext.startActivity(i1);
+        });
 
 
     }

@@ -60,8 +60,9 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, final int i) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder,  final int i) {
         Comment comment = comments.get(i);
+        int currentPosition=i;
 
         if (comment.getC().contains(",&&,"))
         {
@@ -142,8 +143,10 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
                                 if (i == comments.size() || i == commentId.size()) {
                                     Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
                                 } else {
-                                    comments.remove(i);
-                                    commentId.remove(i);
+                                    comments.remove(currentPosition);
+                                    commentId.remove(currentPosition);
+                                    Log.d(TAG, "onBindViewHolder: "+currentPosition+"   "+i);
+                                   AdapterComment.this. notifyItemRemoved(i);
                                     Toast.makeText(mContext, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
 
                                 }
@@ -185,8 +188,7 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
 
     @Override
     public long getItemId(int position) {
-        Comment comment = comments.get(position);
-        return comment.getTim().hashCode();
+        return commentId.get(position).hashCode();
     }
 
     @Override

@@ -8,8 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.facebook.ads.AdSize;
+import com.facebook.ads.AdView;
+import com.facebook.ads.AudienceNetworkAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -42,6 +46,7 @@ public class askedForumFragment extends Fragment {
     private int mResults;
     private AdaperForum forumAdapter;
     private RecyclerView forumRv;
+    private AdView adView;
     public askedForumFragment() {
     }
 
@@ -66,6 +71,14 @@ public class askedForumFragment extends Fragment {
         questionArrayList = new ArrayList<>();
 
 
+        AudienceNetworkAds.initialize(getContext());
+        adView = new AdView(getContext(), getString(R.string.placement_Id), AdSize.BANNER_HEIGHT_50);
+        // Find the Ad Container
+        LinearLayout adContainer = (LinearLayout) view.findViewById(R.id.banner_container);
+        // Add the ad view to your activity layout
+        adContainer.addView(adView);
+        // Request an ad
+        adView.loadAd();
 
         forumRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -212,5 +225,15 @@ public class askedForumFragment extends Fragment {
 
         }
 
+    }
+    @Override
+    public void onDestroy() {
+        if (adView != null) {
+            adView.destroy();
+        }
+//        if (interstitialAd != null) {
+//            interstitialAd.destroy();
+//        }
+        super.onDestroy();
     }
 }
