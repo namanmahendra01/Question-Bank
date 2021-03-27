@@ -52,7 +52,7 @@ public class login extends AppCompatActivity {
     private EditText mPassword;
     private Button btnLogin;
     private TextView linkSignup;
-    private TextView forgotPassword;
+    private TextView forgotPassword,verifyText;
     String justRegistered;
 
     //    SP
@@ -66,7 +66,7 @@ public class login extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
 
-        Log.d(TAG, "onCreate: started.");
+        verifyText=findViewById(R.id.verifyText);
 
 //          Initialize SharedPreference variables
         sp = getSharedPreferences("Login", Context.MODE_PRIVATE);
@@ -83,6 +83,8 @@ public class login extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
+        }else{
+            verifyText.setVisibility(View.VISIBLE);
         }
         init();
 

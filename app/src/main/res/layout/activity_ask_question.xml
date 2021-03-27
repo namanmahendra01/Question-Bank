@@ -35,7 +35,7 @@
                     android:layout_height="100dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/rectangular_border"
-                    android:hint="Enter our Question Here.."
+                    android:hint="Enter your question here.."
                     android:textColorHint="@color/grey"
                     android:textColor="@color/black"
                     android:padding="10dp"

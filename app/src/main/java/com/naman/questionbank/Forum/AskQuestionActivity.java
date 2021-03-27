@@ -77,9 +77,9 @@ public class AskQuestionActivity extends AppCompatActivity {
 
     }
     private void checkTags() {
-        tag1 = t1.getText().toString().toLowerCase();
-        tag2 = t2.getText().toString().toLowerCase();
-        tag3 = t3.getText().toString().toLowerCase();
+        tag1 = t1.getText().toString().toLowerCase().replaceAll("\\s+", "");
+        tag2 = t2.getText().toString().toLowerCase().replaceAll("\\s+", "");
+        tag3 = t3.getText().toString().toLowerCase().replaceAll("\\s+", "");
         if (tag1.length() > 20) {
             progressBar.setVisibility(View.GONE);
             addBtn.setEnabled(true);

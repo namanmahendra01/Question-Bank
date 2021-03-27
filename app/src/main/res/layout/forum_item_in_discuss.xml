@@ -9,8 +9,9 @@
         android:layout_height="wrap_content"
         android:elevation="10dp"
         app:cardCornerRadius="10dp"
-        app:contentPadding="12dp"
-        app:cardBackgroundColor="@color/white">
+        app:contentPadding="6dp"
+
+        app:cardBackgroundColor="@color/ic_launcher_background">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -25,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:text="naman"
                 android:id="@+id/username"
-                android:textColor="@color/deeppurple"
+                android:textColor="@color/black"
                 android:layout_marginLeft="4dp"
                 android:textSize="15sp"
                 android:layout_toRightOf="@+id/profileImage"
@@ -35,16 +36,17 @@
                 android:layout_height="wrap_content"
                 android:text="21-01-2021"
                 android:layout_alignParentRight="true"
+                android:textColor="@color/black"
                 android:id="@+id/date"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="When will AKTU exam starts?"
                 android:textSize="18sp"
-                android:textColor="@color/black"
-                android:fontFamily="sans-serif-smallcaps"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
                 android:padding="5dp"
-
                 android:layout_below="@+id/username"
                 android:id="@+id/question"/>
             <TextView
@@ -52,15 +54,17 @@
                 android:layout_height="wrap_content"
                 android:text="AKTU EXAM 2020"
                 android:id="@+id/tags"
+                android:textColor="@color/black"
                 android:layout_below="@+id/question"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22"
-                android:layout_below="@+id/tags"
                 android:textSize="18sp"
                 android:id="@+id/views"
+                android:layout_alignBottom="@+id/tags"
+                android:layout_alignParentRight="true"
                 android:textColor="@color/black"
                 android:drawableLeft="@drawable/ic_eye"/>
 

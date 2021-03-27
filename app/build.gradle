@@ -11,8 +11,8 @@ android {
         applicationId "com.naman.questionbank"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 7
-        versionName "4.2"
+        versionCode 11
+        versionName "4.5"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

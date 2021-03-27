@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:elevation="10dp"
         app:cardCornerRadius="10dp"
-        app:contentPadding="12dp"
+        app:contentPadding="5dp"
         app:cardBackgroundColor="@color/white">
 
         <RelativeLayout
@@ -40,9 +40,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="When will AKTU exam starts?"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textColor="@color/black"
-                android:fontFamily="sans-serif-smallcaps"
+                android:fontFamily="sans-serif"
                 android:padding="5dp"
 
                 android:layout_below="@+id/username"
@@ -58,9 +58,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="22"
-                android:layout_below="@+id/tags"
                 android:textSize="18sp"
                 android:id="@+id/views"
+                android:layout_alignBottom="@+id/tags"
+                android:layout_alignParentRight="true"
                 android:textColor="@color/black"
                 android:drawableLeft="@drawable/ic_eye"/>
 

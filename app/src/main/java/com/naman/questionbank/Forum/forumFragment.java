@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.facebook.ads.AdSize;
@@ -61,6 +62,7 @@ public class forumFragment extends Fragment {
     private ImageView crossImage;
     private RecyclerView searchListView;
     private AdapterSearchQuestion mAdapter;
+    private RelativeLayout searchRL;
 
     private AdView adView;
     private List<Question> searchedQuestion;
@@ -79,6 +81,8 @@ public class forumFragment extends Fragment {
         searchImage=view.findViewById(R.id.searchicon);
         crossImage=view.findViewById(R.id.cross);
         searchListView=view.findViewById(R.id.searchListView);
+        searchRL=view.findViewById(R.id.searchRv);
+
 
 
 
@@ -141,6 +145,7 @@ public class forumFragment extends Fragment {
             public void onClick(View view) {
                 searchEditText.setText("");
                 searchedQuestion.clear();
+                searchRL.setVisibility(View.GONE);
                 if (mAdapter != null) mAdapter.notifyDataSetChanged();
             }
         });
@@ -297,10 +302,12 @@ public class forumFragment extends Fragment {
         Log.d(TAG, "searching for a match" + keyword);
         searchedQuestion.clear();
         if (keyword.length() == 0) {
+            searchRL.setVisibility(View.GONE);
             crossImage.setVisibility(View.GONE);
 
         } else {
             crossImage.setVisibility(View.VISIBLE);
+            searchRL.setVisibility(View.VISIBLE);
             DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
             Query query = reference.child(getString(R.string.dbname_QuestionTags)).orderByKey()
                     .startAt(keyword).endAt(keyword + "\uf8ff");

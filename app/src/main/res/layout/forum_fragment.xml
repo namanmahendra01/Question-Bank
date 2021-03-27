@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_below="@+id/sb"
         android:id="@+id/searchRv"
+        android:visibility="gone"
         android:background="@color/deeppurple"
 
         android:layout_height="wrap_content">
@@ -32,6 +33,7 @@
     android:layout_below="@+id/searchRv"
         tools:listitem="@layout/forum_item"
     android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
     android:id="@+id/ForumRv"
     />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -39,13 +41,13 @@
         android:layout_width="wrap_content"
         android:src="@drawable/ic_add"
         android:elevation="6dp"
-        app:backgroundTint="@color/black"
+        app:backgroundTint="#0164CF"
         app:fabSize="normal"
         android:layout_margin="16dp"
         android:id="@+id/float_btn"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="end|bottom"
+        android:layout_gravity="end"
+        android:layout_centerVertical="true"
         android:layout_alignParentRight="true" />
     <LinearLayout
         android:id="@+id/banner_container"
