@@ -1,5 +1,7 @@
 package com.naman.questionbank.Forum;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -64,6 +66,7 @@ public class forumFragment extends Fragment {
     private AdapterSearchQuestion mAdapter;
     private RelativeLayout searchRL;
 
+    private  boolean isSignedIn;
     private AdView adView;
     private List<Question> searchedQuestion;
     public forumFragment() {
@@ -84,6 +87,7 @@ public class forumFragment extends Fragment {
         searchRL=view.findViewById(R.id.searchRv);
 
 
+        isSignedIn = FirebaseAuth.getInstance().getCurrentUser() != null;
 
 
         searchListView.setHasFixedSize(true);
@@ -135,8 +139,12 @@ public class forumFragment extends Fragment {
         askBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), AskQuestionActivity.class);
-                startActivity(i);
+                if (isSignedIn) {
+                    Intent i = new Intent(getContext(), AskQuestionActivity.class);
+                    startActivity(i);
+                }else {
+                    showDialogueForLogin("You have to login to ask question.");
+                }
             }
         });
 
@@ -195,7 +203,27 @@ public class forumFragment extends Fragment {
                 });
 
     }
+    private void showDialogueForLogin(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Login to Continue");
+        builder.setMessage(message);
+//                set buttons
+        builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent c = new Intent(getContext(), com.naman.questionbank.login.login.class);
+                startActivity(c);
 
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
     private void displayCard() {
         Log.d(TAG, "display first 10 contest");
 

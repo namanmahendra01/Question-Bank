@@ -93,12 +93,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         enterForum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isSignedIn) {
                     Intent i = new Intent(MainActivity.this, forumActivity.class);
                     startActivity(i);
-                }else{
-                    showDialogueForLogin("You have to login to enter into forum.");
-                }
+
             }
         });
         username.setOnClickListener(new View.OnClickListener() {

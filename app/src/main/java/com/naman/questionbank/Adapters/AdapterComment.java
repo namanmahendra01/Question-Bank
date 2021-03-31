@@ -1,6 +1,8 @@
 package com.naman.questionbank.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.graphics.Typeface;
@@ -25,6 +27,7 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.R;
 import com.naman.questionbank.ViewResourecActivity;
+import com.naman.questionbank.discussionActivity;
 import com.naman.questionbank.models.Comment;
 import com.naman.questionbank.models.Resource;
 import com.naman.questionbank.profileActivity;
@@ -43,13 +46,15 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
     private final List<String> commentId;
     private final String quesId;
     private final String mUserId;
+    private boolean isSignedIn;
 
-    public AdapterComment(Context mContext, List<Comment> comments, List<String> commentId, String quesId, String mUserId) {
+    public AdapterComment(Context mContext, List<Comment> comments, List<String> commentId, String quesId, String mUserId, boolean isSignedIn) {
         this.mContext = mContext;
         this.comments = comments;
         this.commentId = commentId;
         this.quesId = quesId;
         this.mUserId = mUserId;
+        this.isSignedIn=isSignedIn;
     }
 
     @NonNull
@@ -84,40 +89,45 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
         holder.comment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (comment.getC().contains(",&&,")){
-                    Log.d(TAG, "onClick: "+holder.ui+holder.ri);
-                    DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-                    db.child(mContext.getString(R.string.dbname_Resource))
-                            .child(holder.ui)
-                            .child(holder.ri)
-                            .addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    if (snapshot.exists()) {
-                                        Resource resource = snapshot.getValue(Resource.class);
-                                        String[] tagsArray = resource.getTg().split(",");
-                                        Intent i = new Intent(mContext, ViewResourecActivity.class);
-                                        i.putExtra("link", resource.getLk());
-                                        i.putExtra("ui", resource.getUi());
-                                        i.putExtra("ri", resource.getRi());
-                                        i.putExtra("t1", tagsArray[0]);
-                                        i.putExtra("t2", tagsArray[1]);
-                                        i.putExtra("t3", tagsArray[2]);
-                                        i.putExtra("tit", resource.getTtl());
-                                        i.putExtra("ui", comment.getUi());
+                if (isSignedIn) {
+                    if (comment.getC().contains(",&&,")) {
+                        Log.d(TAG, "onClick: " + holder.ui + holder.ri);
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+                        db.child(mContext.getString(R.string.dbname_Resource))
+                                .child(holder.ui)
+                                .child(holder.ri)
+                                .addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        if (snapshot.exists()) {
+                                            Resource resource = snapshot.getValue(Resource.class);
+                                            String[] tagsArray = resource.getTg().split(",");
+                                            Intent i = new Intent(mContext, ViewResourecActivity.class);
+                                            i.putExtra("link", resource.getLk());
+                                            i.putExtra("ui", resource.getUi());
+                                            i.putExtra("ri", resource.getRi());
+                                            i.putExtra("t1", tagsArray[0]);
+                                            i.putExtra("t2", tagsArray[1]);
+                                            i.putExtra("t3", tagsArray[2]);
+                                            i.putExtra("tit", resource.getTtl());
+                                            i.putExtra("ui", comment.getUi());
 
 
-                                        mContext.startActivity(i);
-                                    }else{
-                                        Toast.makeText(mContext, "Resource does not exit.", Toast.LENGTH_SHORT).show();
+                                            mContext.startActivity(i);
+                                        } else {
+                                            Toast.makeText(mContext, "Resource does not exit.", Toast.LENGTH_SHORT).show();
+                                        }
                                     }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
 
-                                }
-                            });
+                                    }
+                                });
+
+                    }
+                }else{
+                    showDialogueForLogin("You have to login to perform this action.");
 
                 }
             }
@@ -128,45 +138,72 @@ public class AdapterComment extends RecyclerView.Adapter<AdapterComment.ViewHold
 
         PopupMenu popup = new PopupMenu(mContext, holder.editButton);
         popup.getMenuInflater().inflate(R.menu.post_comment, popup.getMenu());
-        if (!comment.getUi().equals(FirebaseAuth.getInstance().getCurrentUser().getUid()))
+        if (!isSignedIn){
             holder.editButton.setVisibility(View.GONE);
-        else {
-            holder.editButton.setOnClickListener(v -> popup.show());
-            popup.setOnMenuItemClickListener(item -> {
-                if (item.getTitle().equals("Delete Comment")) {
-                    DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
-                    myRef.child(mContext.getString(R.string.dbname_Discussion))
-                            .child(quesId)
-                            .child(commentId.get(i))
-                            .removeValue()
-                            .addOnCompleteListener(task -> {
-                                if (i == comments.size() || i == commentId.size()) {
-                                    Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    comments.remove(currentPosition);
-                                    commentId.remove(currentPosition);
-                                    Log.d(TAG, "onBindViewHolder: "+currentPosition+"   "+i);
-                                   AdapterComment.this. notifyItemRemoved(i);
-                                    Toast.makeText(mContext, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
 
-                                }
-                            })
-                            .addOnFailureListener(e -> Toast.makeText(mContext, "Unsuccessful", Toast.LENGTH_SHORT).show());
+        }else {
+            if (!comment.getUi().equals(FirebaseAuth.getInstance().getCurrentUser().getUid()))
+                holder.editButton.setVisibility(View.GONE);
+            else {
+                holder.editButton.setOnClickListener(v -> popup.show());
+                popup.setOnMenuItemClickListener(item -> {
+                    if (item.getTitle().equals("Delete Comment")) {
+                        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference();
+                        myRef.child(mContext.getString(R.string.dbname_Discussion))
+                                .child(quesId)
+                                .child(commentId.get(i))
+                                .removeValue()
+                                .addOnCompleteListener(task -> {
+                                    if (i == comments.size() || i == commentId.size()) {
+                                        Toast.makeText(mContext, "Error", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        comments.remove(currentPosition);
+                                        commentId.remove(currentPosition);
+                                        Log.d(TAG, "onBindViewHolder: " + currentPosition + "   " + i);
+                                        AdapterComment.this.notifyItemRemoved(i);
+                                        Toast.makeText(mContext, "Deleted Successfully!", Toast.LENGTH_SHORT).show();
 
-                }
-                return true;
+                                    }
+                                })
+                                .addOnFailureListener(e -> Toast.makeText(mContext, "Unsuccessful", Toast.LENGTH_SHORT).show());
+
+                    }
+                    return true;
+                });
+            }
+        }
+        if (isSignedIn) {
+            holder.username.setOnClickListener(v -> {
+                Intent i1 = new Intent(mContext, profileActivity.class);
+                i1.putExtra("visitor", "true");
+                i1.putExtra("ui", comment.getUi());
+                mContext.startActivity(i1);
             });
         }
-        holder.username.setOnClickListener(v -> {
-            Intent i1 = new Intent(mContext, profileActivity.class);
-            i1.putExtra("visitor", "true");
-            i1.putExtra("ui", comment.getUi());
-            mContext.startActivity(i1);
-        });
 
 
     }
+    private void showDialogueForLogin(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle("Login to Continue");
+        builder.setMessage(message);
+//                set buttons
+        builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent c = new Intent(mContext, com.naman.questionbank.login.login.class);
+                mContext.startActivity(c);
 
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
     private void getUserdetail(String user_id, TextView username) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
         Query query = reference

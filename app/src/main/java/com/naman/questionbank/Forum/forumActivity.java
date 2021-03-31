@@ -133,8 +133,8 @@ public class forumActivity extends AppCompatActivity {
     //    *********************FIREBASE***************************
     private void checkCurrentuser(FirebaseUser user) {
         if (user == null) {
-            Intent intent = new Intent(forumActivity.this, login.class);
-            startActivity(intent);
+//            Intent intent = new Intent(forumActivity.this, login.class);
+//            startActivity(intent);
         }
 
 
@@ -155,21 +155,21 @@ public class forumActivity extends AppCompatActivity {
 
                     Log.d(TAG, "onAuthStateChanged:signed in:" + user.getUid());
                 } else {
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                    Log.d(TAG, "onAuthStateChanged: navigating to login");
-                    SharedPreferences settings = getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
-                    new android.app.AlertDialog.Builder(context)
-                            .setTitle("No user logon found")
-                            .setMessage("We will be logging u out. \n Please try to log in again")
-                            .setPositiveButton(android.R.string.ok, (dialog, which) -> {
-                                Intent intent = new Intent(context, login.class);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                settings.edit().clear().apply();
-                                if (mAuthListener != null)
-                                    mAuth.removeAuthStateListener(mAuthListener);
-                                startActivity(intent);
-                            })
-                            .show();
+//                    Log.d(TAG, "onAuthStateChanged:signed_out");
+//                    Log.d(TAG, "onAuthStateChanged: navigating to login");
+//                    SharedPreferences settings = getSharedPreferences("shared preferences", Context.MODE_PRIVATE);
+//                    new android.app.AlertDialog.Builder(context)
+//                            .setTitle("No user logon found")
+//                            .setMessage("We will be logging u out. \n Please try to log in again")
+//                            .setPositiveButton(android.R.string.ok, (dialog, which) -> {
+//                                Intent intent = new Intent(context, login.class);
+//                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                                settings.edit().clear().apply();
+//                                if (mAuthListener != null)
+//                                    mAuth.removeAuthStateListener(mAuthListener);
+//                                startActivity(intent);
+//                            })
+//                            .show();
                 }
             }
         };

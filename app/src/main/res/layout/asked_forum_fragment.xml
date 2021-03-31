@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ForumRv"
-        tools:listitem="@layout/forum_item"/>
+        android:paddingBottom="50dp"
+       />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_height="wrap_content"

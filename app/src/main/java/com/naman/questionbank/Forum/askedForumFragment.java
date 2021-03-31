@@ -1,5 +1,7 @@
 package com.naman.questionbank.Forum;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -22,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.naman.questionbank.Adapters.AdaperForum;
+import com.naman.questionbank.MainActivity;
 import com.naman.questionbank.R;
 import com.naman.questionbank.ViewResourecActivity;
 import com.naman.questionbank.models.Question;
@@ -47,6 +50,7 @@ public class askedForumFragment extends Fragment {
     private AdaperForum forumAdapter;
     private RecyclerView forumRv;
     private AdView adView;
+    private boolean isSignedIn;
     public askedForumFragment() {
     }
 
@@ -57,6 +61,8 @@ public class askedForumFragment extends Fragment {
         View view = inflater.inflate(R.layout.asked_forum_fragment, container, false);
         askBtn=view.findViewById(R.id.float_btn);
         forumRv=view.findViewById(R.id.ForumRv);
+
+        isSignedIn = FirebaseAuth.getInstance().getCurrentUser() != null;
 
 
         forumRv.setHasFixedSize(true);
@@ -96,19 +102,46 @@ public class askedForumFragment extends Fragment {
         askBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getContext(), AskQuestionActivity.class);
-                startActivity(i);
+                if (isSignedIn) {
+                    Intent i = new Intent(getContext(), AskQuestionActivity.class);
+                    startActivity(i);
+                }else{
+                    showDialogueForLogin("You have to login to ask question.");
+                }
             }
         });
 
 
-        getQuestion();
+
+        if (isSignedIn) {
+            getQuestion();
+        }
 
 
 
         return view;
     }
+    private void showDialogueForLogin(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Login to Continue");
+        builder.setMessage(message);
+//                set buttons
+        builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent c = new Intent(getContext(), com.naman.questionbank.login.login.class);
+                startActivity(c);
 
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
     private void getQuestion() {
         questionArrayList.clear();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();

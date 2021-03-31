@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,6 +45,7 @@ public class discussionActivity extends AppCompatActivity {
     private static final String TAG = "CommentActivity";
 
     private AdapterComment adapterComment;
+    private boolean isSignedIn;
 
 
 
@@ -72,6 +75,7 @@ public class discussionActivity extends AppCompatActivity {
         userId=i.getStringExtra("ui");
         Log.d(TAG, "onCreate: "+quesId);
 
+        isSignedIn = FirebaseAuth.getInstance().getCurrentUser() != null;
 
         commentRv = findViewById(R.id.recyclerComment);
         commentRv.setHasFixedSize(true);
@@ -80,23 +84,29 @@ public class discussionActivity extends AppCompatActivity {
 
         comments = new ArrayList<>();
         commentID = new ArrayList<>();
-        adapterComment = new AdapterComment(this, comments, commentID, quesId, userId);
+        adapterComment = new AdapterComment(this, comments, commentID, quesId, userId,isSignedIn);
         adapterComment.setHasStableIds(true);
         commentRv.setAdapter(adapterComment);
 
         getComments(quesId, userId);
-        if (!FirebaseAuth.getInstance().getCurrentUser().getUid().equals(userId)) {
-            increaseViews();
+        if (isSignedIn) {
+            if (!FirebaseAuth.getInstance().getCurrentUser().getUid().equals(userId)) {
+                increaseViews();
+            }
         }
 
         ImageView mCheckMark = findViewById(R.id.checkMark);
         mCheckMark.setOnClickListener(v -> {
-            if (!mComment.getText().toString().equals("")) {
-                addNewComment(mComment.getText().toString());
-                mComment.setText("");
-                closeKeyboard();
-            } else Toast.makeText(discussionActivity.this, "please enter something", Toast.LENGTH_SHORT).show();
-
+            if (isSignedIn) {
+                if (!mComment.getText().toString().equals("")) {
+                    addNewComment(mComment.getText().toString());
+                    mComment.setText("");
+                    closeKeyboard();
+                } else
+                    Toast.makeText(discussionActivity.this, "please enter something", Toast.LENGTH_SHORT).show();
+            }else{
+                showDialogueForLogin("You have to login to perform this action.");
+            }
         });
 
         ImageView mBackArrow = findViewById(R.id.backarrow);
@@ -107,17 +117,42 @@ public class discussionActivity extends AppCompatActivity {
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(discussionActivity.this, profileActivity.class);
-                i.putExtra("toShare","true");
-                i.putExtra("qi",quesId);
-                startActivity(i);
+                if (isSignedIn) {
+                    Intent i = new Intent(discussionActivity.this, profileActivity.class);
+                    i.putExtra("toShare", "true");
+                    i.putExtra("qi", quesId);
+                    startActivity(i);
+                }else{
+                    showDialogueForLogin("You have to login to perform this action.");
+
+                }
             }
         });
 
 
 
     }
+    private void showDialogueForLogin(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(discussionActivity.this);
+        builder.setTitle("Login to Continue");
+        builder.setMessage(message);
+//                set buttons
+        builder.setPositiveButton("Log in", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent c = new Intent(discussionActivity.this, com.naman.questionbank.login.login.class);
+                startActivity(c);
 
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+    }
     private void increaseViews() {
         int x=Integer.parseInt(views.getText().toString());
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
